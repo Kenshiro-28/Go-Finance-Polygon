@@ -42,7 +42,7 @@ class Home extends Component
     } 
     else 
     {
-      window.alert('pGō contract not deployed on your current network.')
+      window.alert('Gō contract not deployed on your current network.')
     }
 
     // Load GoFarm
@@ -71,7 +71,7 @@ class Home extends Component
     }
     else 
     {
-      window.alert('pGō farm contract not deployed on your current network.')
+      window.alert('Gō farm contract not deployed on your current network.')
     }
   }
 

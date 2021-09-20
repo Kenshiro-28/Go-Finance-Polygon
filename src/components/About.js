@@ -34,6 +34,17 @@ class About extends Component
           		
           		<p>Farm contract: &nbsp;&nbsp;0x05C1EC18455dB5edcf1389B8fC215d56B42A15C0</p>
           		<br /><p />
+          		<p className="centered_text">----- 霊 Rei Pool -----</p>
+          		<br />
+          		<p>You can stake your pGō tokens to earn Dai rewards that are variable and subject to the dynamics of supply and demand. Your rewards increase with your staking power, which depends on how often you harvest your rewards: the longer the time between harvests, the higher the staking power.</p>
+          		
+          		<p>You can harvest up to one time per day, but the maximum staking power is reached after one month without harvesting. Keep in mind that your rewards may suddenly increase or decrease depending on how much other users harvest and the total deposits on the farm, so the most conservative approach is frequent harvests.</p>
+          		
+          		<p>Deposit fees are used to buy pWings and deposit it in the JetSwap Pool. Two-thirds of the pWings rewards earned on JetSwap are used to buy Dai and deposit it in the rewards fund. The remaining third of the rewards are reinvested in the Pool, increasing performance over time.</p>
+          		
+          		<br />
+          		<p>Pool contract: &nbsp;&nbsp;0xF93909381Da714b8262cC806FAe07a0E72ed7A80</p>
+          		<br /><p />
           		<p className="centered_text">----- 金庫 Vault -----</p>
           		<br />
           		<p>You can stake your WETH tokens to earn WETH rewards that are variable and subject to the dynamics of supply and demand. Your rewards increase with your staking power, which depends on how often you harvest your rewards: the longer the time between harvests, the higher the staking power.</p>

@@ -5,6 +5,7 @@ import 'bootstrap/dist/css/bootstrap.css'
 
 import Home from './components/Home';
 import Farm from './components/Farm';
+import DaiPool from './components/DaiPool';
 import Vault from './components/Vault';
 import About from './components/About';
 
@@ -16,27 +17,38 @@ const routing = (
     <Router>  
         <div className="row navigation_bar">
         
-           <div className="col-sm-3">
+           <div className="col-sm-1">
+           </div>
+        
+           <div className="col-sm-2">
 			   <NavLink to="/" exact>家 Home</NavLink>  
 		   </div>
 			 
-		   <div className="col-sm-3">
+		   <div className="col-sm-2">
 			   <NavLink to="/farm" exact>合 Gō Farm</NavLink>  
 		   </div>
 		   
-		   <div className="col-sm-3">
+   		   <div className="col-sm-2">
+			   <NavLink to="/rei" exact>霊 Rei Pool</NavLink>  
+		   </div>
+		   
+		   <div className="col-sm-2">
 			   <NavLink to="/vault" exact>金庫 Vault</NavLink>  
 		   </div>
 		   
-		   <div className="col-sm-3">
+		   <div className="col-sm-2">
 			   <NavLink to="/about" exact>情報 About</NavLink>  
 		   </div>
+		   
+           <div className="col-sm-1">
+           </div>
 
 	    </div>
         <div>  
             <Switch>  
                 <Route exact path="/" component={Home} />  
                 <Route exact path="/farm" component={Farm} />
+                <Route exact path="/rei" component={DaiPool} />
                 <Route exact path="/vault" component={Vault} />    
                 <Route exact path="/about" component={About} />  
                 <Route component={Notfound} />  

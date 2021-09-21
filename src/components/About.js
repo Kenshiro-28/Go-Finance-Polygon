@@ -43,7 +43,7 @@ class About extends Component
           		<p>Deposit fees are used to buy pWings and deposit it in the JetSwap Pool. Two-thirds of the pWings rewards earned on JetSwap are used to buy Dai and deposit it in the rewards fund. The remaining third of the rewards are reinvested in the Pool, increasing performance over time.</p>
           		
           		<br />
-          		<p>Pool contract: &nbsp;&nbsp;0xF93909381Da714b8262cC806FAe07a0E72ed7A80</p>
+          		<p>Pool contract: &nbsp;&nbsp;0xEd2CB8904273b43929E4eFd79B6d95DbfDb524f9</p>
           		<br /><p />
           		<p className="centered_text">----- 金庫 Vault -----</p>
           		<br />

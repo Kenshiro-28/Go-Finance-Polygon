@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 import Web3 from 'web3'
 import GoToken from '../abis/GoToken.json'
-import DaiPoolAbi from '../abis/DaiPool.json'
-import logo from '../pictures/dai.png'
+import MaticPoolAbi from '../abis/MaticPool.json'
+import logo from '../pictures/matic.png'
 
-class DaiPool extends Component 
+class MaticPool extends Component 
 {
   intervalID;
 
@@ -51,53 +51,53 @@ class DaiPool extends Component
       window.alert('Gō contract not deployed on your current network.')
     }
     
-    // Load DaiPool
-    const daiPoolData = DaiPoolAbi.networks[networkId]
-    let daiPool
+    // Load MaticPool
+    const maticPoolData = MaticPoolAbi.networks[networkId]
+    let maticPool
     
-    if(daiPoolData) 
+    if(maticPoolData) 
     {
-      daiPool = new web3.eth.Contract(DaiPoolAbi.abi, daiPoolData.address)
-      this.setState({daiPool})
+      maticPool = new web3.eth.Contract(MaticPoolAbi.abi, maticPoolData.address)
+      this.setState({maticPool})
       
-      const stakingDeposit = await daiPool.methods.getStakingDeposit().call({from: this.state.account})
+      const stakingDeposit = await maticPool.methods.getStakingDeposit().call({from: this.state.account})
       this.setState({stakingDeposit})
       
       const fixedDeposit = parseFloat(window.web3.utils.fromWei(this.state.stakingDeposit)).toFixed(4)
       this.setState({fixedDeposit})
       
-      const stakingBlock = await daiPool.methods.getStakingBlock().call({from: this.state.account})
+      const stakingBlock = await maticPool.methods.getStakingBlock().call({from: this.state.account})
       this.setState({stakingBlock})
       
-      const blocksStaking = await daiPool.methods.computeBlocksStaking().call({from: this.state.account})
+      const blocksStaking = await maticPool.methods.computeBlocksStaking().call({from: this.state.account})
       this.setState({blocksStaking})
       
       let userReward = '0'
       
       if (stakingDeposit > 0)
-          userReward = await daiPool.methods.computeUserReward().call({from: this.state.account})
+          userReward = await maticPool.methods.computeUserReward().call({from: this.state.account})
 
       this.setState({userReward})
       
       const fixedReward = parseFloat(window.web3.utils.fromWei(this.state.userReward)).toFixed(4)
       this.setState({fixedReward})
  
-      const rewardsFund = await daiPool.methods.getRewardsFund().call()
+      const rewardsFund = await maticPool.methods.getRewardsFund().call()
       this.setState({rewardsFund})
       
-      const fixedRewardsFund = parseFloat(window.web3.utils.fromWei(this.state.rewardsFund)).toFixed(4)
+      const fixedRewardsFund = parseFloat(window.web3.utils.fromWei(this.state.rewardsFund)).toFixed(2)
       this.setState({fixedRewardsFund})
       
-      const totalStakingDeposits = await daiPool.methods.getTotalStakingDeposits().call()
+      const totalStakingDeposits = await maticPool.methods.getTotalStakingDeposits().call()
       this.setState({totalStakingDeposits})
       
       const fixedTotalStakingDeposits = parseFloat(window.web3.utils.fromWei(this.state.totalStakingDeposits)).toFixed(4)
       this.setState({fixedTotalStakingDeposits})
       
-      const harvestCooldownBlocks = await daiPool.methods.getHarvestCooldownBlocks().call()
+      const harvestCooldownBlocks = await maticPool.methods.getHarvestCooldownBlocks().call()
       this.setState({harvestCooldownBlocks})
       
-      const stakingBlockRange = await daiPool.methods.getStakingBlockRange().call()
+      const stakingBlockRange = await maticPool.methods.getStakingBlockRange().call()
       this.setState({stakingBlockRange})
 
       let auxStakingPower = (blocksStaking / stakingBlockRange) * 100
@@ -109,15 +109,15 @@ class DaiPool extends Component
             
       this.setState({stakingPower})
       
-      const monthlyRewards = (fixedRewardsFund / fixedTotalStakingDeposits).toFixed(4) 
+      const monthlyRewards = (fixedRewardsFund / fixedTotalStakingDeposits).toFixed(2) 
       this.setState({monthlyRewards})
       
-      const allowance = await this.state.goToken.methods.allowance(this.state.account, daiPoolData.address).call()
+      const allowance = await this.state.goToken.methods.allowance(this.state.account, maticPoolData.address).call()
       this.setState({allowance})
     }
     else 
     {
-      window.alert('DaiPool contract not deployed on your current network.')
+      window.alert('MaticPool contract not deployed on your current network.')
     }
   }
 
@@ -142,7 +142,7 @@ class DaiPool extends Component
   {
     const amount = this.state.goBalance
   
-    this.state.goToken.methods.approve(this.state.daiPool._address, amount).send({from: this.state.account})
+    this.state.goToken.methods.approve(this.state.maticPool._address, amount).send({from: this.state.account})
   }
 
   deposit = (amount) => 
@@ -152,17 +152,17 @@ class DaiPool extends Component
         
         window.alert('Increasing your deposit will reset your staking power. Harvest your pending rewards first or you will lose them.')
     else
-        this.state.daiPool.methods.deposit(amount).send({from: this.state.account})
+        this.state.maticPool.methods.deposit(amount).send({from: this.state.account})
   }
 
   withdraw = () => 
   {
-    this.state.daiPool.methods.withdraw().send({from: this.state.account})
+    this.state.maticPool.methods.withdraw().send({from: this.state.account})
   }
   
   harvest = () => 
   {
-    this.state.daiPool.methods.harvest().send({from: this.state.account})
+    this.state.maticPool.methods.harvest().send({from: this.state.account})
   }
   
   constructor(props) 
@@ -173,7 +173,7 @@ class DaiPool extends Component
     {
       account: '0x0',
       goToken: {},
-      daiPool: {},
+      maticPool: {},
       goBalance: '0',
       goFixedBalance: '0',
       stakingDeposit: '0',
@@ -217,11 +217,11 @@ class DaiPool extends Component
                   </tr>
                   <tr>
                     <td>Monthly rewards: &nbsp;&nbsp;</td>
-                    <td>{this.state.monthlyRewards} Dai (per token)</td>
+                    <td>{this.state.monthlyRewards} MATIC (per token)</td>
                   </tr>
                   <tr>
                     <td>Rewards fund: </td>
-                    <td>{this.state.fixedRewardsFund} Dai</td>
+                    <td>{this.state.fixedRewardsFund} MATIC</td>
                   </tr>
                   <tr>
                     <td>Total deposits: </td>
@@ -395,4 +395,4 @@ class DaiPool extends Component
    }
 }
 
-export default DaiPool;
+export default MaticPool;

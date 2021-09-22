@@ -5,7 +5,7 @@ import 'bootstrap/dist/css/bootstrap.css'
 
 import Home from './components/Home';
 import Farm from './components/Farm';
-import DaiPool from './components/DaiPool';
+import MaticPool from './components/MaticPool';
 import Vault from './components/Vault';
 import About from './components/About';
 
@@ -48,7 +48,7 @@ const routing = (
             <Switch>  
                 <Route exact path="/" component={Home} />  
                 <Route exact path="/farm" component={Farm} />
-                <Route exact path="/rei" component={DaiPool} />
+                <Route exact path="/rei" component={MaticPool} />
                 <Route exact path="/vault" component={Vault} />    
                 <Route exact path="/about" component={About} />  
                 <Route component={Notfound} />  

@@ -121,7 +121,7 @@ class Home extends Component
 		        <p className="centered_text">100% community owned DeFi farming</p>
           		<br /><p />
           		<center>
-          		    <a href="https://rugdoc.io/project/go-finance/" target="blank">
+          		    <a href="https://rugdoc.io/project/go-finance-polygon/" target="blank">
               		    <img src={rugdoc} height="120" alt="Rugdoc"/>
               		</a>
           		</center>

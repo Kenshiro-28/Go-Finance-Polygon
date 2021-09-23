@@ -40,7 +40,7 @@ class About extends Component
           		
           		<p>You can harvest up to one time per day, but the maximum staking power is reached after one month without harvesting. Keep in mind that your rewards may suddenly increase or decrease depending on how much other users harvest and the total deposits on the farm, so the most conservative approach is frequent harvests.</p>
           		
-          		<p>Deposit fees are used to buy pWings and deposit it in the JetSwap Pool. Two-thirds of the pWings rewards earned on JetSwap are used to buy MATIC and deposit it in the rewards fund. The remaining third of the rewards are reinvested in the Pool, increasing performance over time.</p>
+          		<p>Deposit fees are used to buy pWings and deposit it in the JetSwap Pool. Two-thirds of the pWings rewards earned on JetSwap are used to buy MATIC and deposit it in the rewards fund. The remaining third of the rewards are reinvested in the Pool, increasing performance over time. Rewards are delivered as WMATIC.</p>
           		
           		<br />
           		<p>Pool contract: &nbsp;&nbsp;0xEa1970c45e9C58FA4cAD14D576Fb1c9C7191730c</p>

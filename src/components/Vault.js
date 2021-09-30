@@ -209,11 +209,11 @@ class Vault extends Component
                     <td>{this.state.stakingPower} %</td>
                   </tr>
                   <tr>
-                    <td>Harvest lockup: </td>
+                    <td>Harvest lockup: &nbsp;&nbsp;</td>
                     <td>1 day</td>
                   </tr>
                   <tr>
-                    <td>Monthly rewards: &nbsp;&nbsp;</td>
+                    <td>Monthly APR: </td>
                     <td>{this.state.monthlyAPR} %</td>
                   </tr>
                   <tr>

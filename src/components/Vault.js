@@ -213,16 +213,16 @@ class Vault extends Component
                     <td>1 day</td>
                   </tr>
                   <tr>
-                    <td>Monthly APR: </td>
-                    <td>{this.state.monthlyAPR} %</td>
-                  </tr>
-                  <tr>
                     <td>Rewards fund: </td>
                     <td>{this.state.fixedRewardsFund} WETH</td>
                   </tr>
                   <tr>
                     <td>Total deposits: </td>
                     <td>{this.state.fixedTotalStakingDeposits} WETH</td>
+                  </tr>
+                  <tr>
+                    <td>Monthly APR: </td>
+                    <td>{this.state.monthlyAPR} %</td>
                   </tr>
                   <tr>
                     <td>Deposit fee: </td>

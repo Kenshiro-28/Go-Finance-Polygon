@@ -312,10 +312,8 @@ class BlokPool extends Component
     const title = (
             <div className="row">
               <div className="col-sm">
-    	        <br /><p />	
-		        <br /><p />
+		        <br />
 		        <center><img src={logo} height="250" alt="Logo"/></center>
-        		<br /><p />
         		<br /><p />
         	  </div>
         	</div>)

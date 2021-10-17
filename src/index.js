@@ -6,6 +6,7 @@ import 'bootstrap/dist/css/bootstrap.css'
 import Home from './components/Home';
 import Farm from './components/Farm';
 import MaticPool from './components/MaticPool';
+import BlokPool from './components/BlokPool';
 import Vault from './components/Vault';
 import About from './components/About';
 
@@ -16,9 +17,6 @@ const Notfound = () => <div><br/><p/><h1>Invalid URL</h1><br/><p/></div>
 const routing = (  
     <Router>  
         <div className="row navigation_bar">
-        
-           <div className="col-sm-1">
-           </div>
         
            <div className="col-sm-2">
 			   <NavLink to="/" exact>家 Home</NavLink>  
@@ -32,6 +30,10 @@ const routing = (
 			   <NavLink to="/rei" exact>霊 Rei Pool</NavLink>  
 		   </div>
 		   
+   		   <div className="col-sm-2">
+			   <NavLink to="/ki" exact>気 Ki Pool</NavLink>  
+		   </div>
+		   
 		   <div className="col-sm-2">
 			   <NavLink to="/vault" exact>金庫 Vault</NavLink>  
 		   </div>
@@ -40,15 +42,13 @@ const routing = (
 			   <NavLink to="/about" exact>情報 About</NavLink>  
 		   </div>
 		   
-           <div className="col-sm-1">
-           </div>
-
 	    </div>
         <div>  
             <Switch>  
                 <Route exact path="/" component={Home} />  
                 <Route exact path="/farm" component={Farm} />
                 <Route exact path="/rei" component={MaticPool} />
+                <Route exact path="/ki" component={BlokPool} />
                 <Route exact path="/vault" component={Vault} />    
                 <Route exact path="/about" component={About} />  
                 <Route component={Notfound} />  

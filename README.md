@@ -26,11 +26,11 @@ Farm contract: 0x05C1EC18455dB5edcf1389B8fC215d56B42A15C0
 
 ## Rei pool
 
-You can stake your pGō tokens to earn MATIC rewards that are variable and subject to the dynamics of supply and demand. Your rewards increase with your staking power, which depends on how often you harvest your rewards: the longer the time between harvests, the higher the staking power.
+You can stake your pGō tokens to earn WMATIC rewards that are variable and subject to the dynamics of supply and demand. Your rewards increase with your staking power, which depends on how often you harvest your rewards: the longer the time between harvests, the higher the staking power.
 
 You can harvest up to one time per day, but the maximum staking power is reached after one month without harvesting. Keep in mind that your rewards may suddenly increase or decrease depending on how much other users harvest and the total deposits on the farm, so the most conservative approach is frequent harvests.
 
-Deposit fees are used to buy pWings and deposit it in the JetSwap Pool. Two-thirds of the pWings rewards earned on JetSwap are used to buy MATIC and deposit it in the rewards fund. The remaining third of the rewards are reinvested in the Pool, increasing performance over time. Rewards are delivered as WMATIC.
+Deposit fees are used to buy pWings and deposit it in the JetSwap Pool. Two-thirds of the pWings rewards earned on JetSwap are used to buy WMATIC and deposit it in the rewards fund. The remaining third of the rewards are reinvested in the Pool, increasing performance over time.
 
 Pool contract: 0xEa1970c45e9C58FA4cAD14D576Fb1c9C7191730c
 

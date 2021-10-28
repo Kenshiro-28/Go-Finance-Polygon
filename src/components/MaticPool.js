@@ -217,11 +217,11 @@ class MaticPool extends Component
                   </tr>
                   <tr>
                     <td>Monthly rewards: &nbsp;&nbsp;</td>
-                    <td>{this.state.monthlyRewards} MATIC (per token)</td>
+                    <td>{this.state.monthlyRewards} WMATIC (per token)</td>
                   </tr>
                   <tr>
                     <td>Rewards fund: </td>
-                    <td>{this.state.fixedRewardsFund} MATIC</td>
+                    <td>{this.state.fixedRewardsFund} WMATIC</td>
                   </tr>
                   <tr>
                     <td>Total deposits: </td>

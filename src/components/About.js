@@ -32,29 +32,37 @@ class About extends Component
           		
           		<p>You can harvest up to one time per day, but the maximum staking power is reached after one year without harvesting. Keep in mind that your rewards may suddenly increase or decrease depending on how much other users harvest and the total deposits on the farm, so the most conservative approach is frequent harvests.</p>
           		
-          		<p>Farm contract: &nbsp;&nbsp;0x05C1EC18455dB5edcf1389B8fC215d56B42A15C0</p>
+          		<p>Contract: &nbsp;&nbsp;0x05C1EC18455dB5edcf1389B8fC215d56B42A15C0</p>
+          		<br /><p />
+          		<p className="centered_text">----- 将軍 Shōgun Pool -----</p>
+          		<br />
+          		<p>You can stake your pGō tokens to earn MAI rewards that are variable and subject to the dynamics of supply and demand. Your rewards increase with your staking power, which depends on how often you harvest your rewards: the longer the time between harvests, the higher the staking power.</p>
+          		
+          		<p>You can harvest up to one time per day, but the maximum staking power is reached after one month without harvesting. Keep in mind that your rewards may suddenly increase or decrease depending on how much other users harvest and the total deposits on the pool, so the most conservative approach is frequent harvests.</p>
+          		
+          		<p>Deposit fees are used to buy pWings and deposit it in the JetSwap Pool. Two-thirds of the pWings rewards earned on JetSwap are used to buy MAI and deposit it in the rewards fund. The remaining third of the rewards are reinvested in the Pool, increasing performance over time.</p>
+          		
+          		<p>Contract: &nbsp;&nbsp;0x6f9FE69f8296Ec670C2A3BfB4e87897FC4e273D0</p>
           		<br /><p />
           		<p className="centered_text">----- 霊 Rei Pool -----</p>
           		<br />
           		<p>You can stake your pGō tokens to earn WMATIC rewards that are variable and subject to the dynamics of supply and demand. Your rewards increase with your staking power, which depends on how often you harvest your rewards: the longer the time between harvests, the higher the staking power.</p>
           		
-          		<p>You can harvest up to one time per day, but the maximum staking power is reached after one month without harvesting. Keep in mind that your rewards may suddenly increase or decrease depending on how much other users harvest and the total deposits on the farm, so the most conservative approach is frequent harvests.</p>
+          		<p>You can harvest up to one time per day, but the maximum staking power is reached after one month without harvesting. Keep in mind that your rewards may suddenly increase or decrease depending on how much other users harvest and the total deposits on the pool, so the most conservative approach is frequent harvests.</p>
           		
           		<p>Deposit fees are used to buy pWings and deposit it in the JetSwap Pool. Two-thirds of the pWings rewards earned on JetSwap are used to buy WMATIC and deposit it in the rewards fund. The remaining third of the rewards are reinvested in the Pool, increasing performance over time.</p>
           		
-          		<br />
-          		<p>Pool contract: &nbsp;&nbsp;0xEa1970c45e9C58FA4cAD14D576Fb1c9C7191730c</p>
+          		<p>Contract: &nbsp;&nbsp;0xEa1970c45e9C58FA4cAD14D576Fb1c9C7191730c</p>
           		<br /><p />
           		<p className="centered_text">----- 気 Ki Pool -----</p>
           		<br />
           		<p>You can stake your pGō tokens to earn BLOK rewards that are variable and subject to the dynamics of supply and demand. Your rewards increase with your staking power, which depends on how often you harvest your rewards: the longer the time between harvests, the higher the staking power.</p>
           		
-          		<p>You can harvest up to one time per day, but the maximum staking power is reached after one month without harvesting. Keep in mind that your rewards may suddenly increase or decrease depending on how much other users harvest and the total deposits on the farm, so the most conservative approach is frequent harvests.</p>
+          		<p>You can harvest up to one time per day, but the maximum staking power is reached after one month without harvesting. Keep in mind that your rewards may suddenly increase or decrease depending on how much other users harvest and the total deposits on the pool, so the most conservative approach is frequent harvests.</p>
           		
           		<p>Deposit fees are used to buy pWings and deposit it in the JetSwap Pool. Two-thirds of the pWings rewards earned on JetSwap are used to buy BLOK and deposit it in the rewards fund. The remaining third of the rewards are reinvested in the Pool, increasing performance over time.</p>
           		
-          		<br />
-          		<p>Pool contract: &nbsp;&nbsp;0x5b5B4D7b3B5D6E27b190Be90d462a2dcE108fdc5</p>
+          		<p>Contract: &nbsp;&nbsp;0x5b5B4D7b3B5D6E27b190Be90d462a2dcE108fdc5</p>
           		<br /><p />
           		<p className="centered_text">----- 金庫 Vault -----</p>
           		<br />
@@ -64,8 +72,7 @@ class About extends Component
           		
           		<p>Deposit fees are used to buy pWings and deposit it in the JetSwap Pool. Two-thirds of the pWings rewards earned on JetSwap are used to buy WETH and deposit it in the rewards fund. The remaining third of the rewards are reinvested in the Pool, increasing performance over time.</p>
           		
-          		<br />
-          		<p>Vault contract: &nbsp;&nbsp;0x8b8D923c6445E75AaBbD1322D4CdE7De9A0477cA</p>
+          		<p>Contract: &nbsp;&nbsp;0x8b8D923c6445E75AaBbD1322D4CdE7De9A0477cA</p>
           		<br /><p />
           		<p className="centered_text">----- Disclaimer -----</p>
           		<br />

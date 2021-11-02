@@ -5,6 +5,7 @@ import 'bootstrap/dist/css/bootstrap.css'
 
 import Home from './components/Home';
 import Farm from './components/Farm';
+import ShogunPool from './components/ShogunPool';
 import MaticPool from './components/MaticPool';
 import BlokPool from './components/BlokPool';
 import Vault from './components/Vault';
@@ -18,27 +19,31 @@ const routing = (
     <Router>  
         <div className="row navigation_bar">
         
-           <div className="col-sm-2">
+           <div className="col-sm">
 			   <NavLink to="/" exact>家 Home</NavLink>  
 		   </div>
 			 
-		   <div className="col-sm-2">
+		   <div className="col-sm">
 			   <NavLink to="/farm" exact>合 Gō Farm</NavLink>  
 		   </div>
 		   
-   		   <div className="col-sm-2">
+ 		   <div className="col-sm-2">
+			   <NavLink to="/shogun" exact>将軍 Shōgun Pool</NavLink>  
+		   </div>
+		   
+   		   <div className="col-sm">
 			   <NavLink to="/rei" exact>霊 Rei Pool</NavLink>  
 		   </div>
 		   
-   		   <div className="col-sm-2">
+   		   <div className="col-sm">
 			   <NavLink to="/ki" exact>気 Ki Pool</NavLink>  
 		   </div>
 		   
-		   <div className="col-sm-2">
+		   <div className="col-sm">
 			   <NavLink to="/vault" exact>金庫 Vault</NavLink>  
 		   </div>
 		   
-		   <div className="col-sm-2">
+		   <div className="col-sm">
 			   <NavLink to="/about" exact>情報 About</NavLink>  
 		   </div>
 		   
@@ -47,6 +52,7 @@ const routing = (
             <Switch>  
                 <Route exact path="/" component={Home} />  
                 <Route exact path="/farm" component={Farm} />
+                <Route exact path="/shogun" component={ShogunPool} />
                 <Route exact path="/rei" component={MaticPool} />
                 <Route exact path="/ki" component={BlokPool} />
                 <Route exact path="/vault" component={Vault} />    

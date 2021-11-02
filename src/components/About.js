@@ -14,7 +14,7 @@ class About extends Component
                 <p className="centered_text">----- Overview -----</p>
                 <br />
           		<p>Gō Finance is a 100% decentralized DeFi platform with an open source web interface that anyone can download and run locally on their computer.</p>
-          		<p>Smart contracts have no ownership privileges and run an immutable set of rules. They are deployed on Polygon and Binance Smart Chain.</p>
+          		<p>Smart contracts have no owner privileges and run an immutable set of rules. They are deployed on Polygon and Binance Smart Chain.</p>
           		<p>Keep in mind that trading is a risky activity that can involve a loss of money. You should only invest the amount you can afford to lose.</p>
           		<br /><p />
           		<p className="centered_text">----- Tokenomics -----</p>

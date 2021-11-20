@@ -85,7 +85,7 @@ class BlokPool extends Component
       const rewardsFund = await blokPool.methods.getRewardsFund().call()
       this.setState({rewardsFund})
       
-      const fixedRewardsFund = parseFloat(window.web3.utils.fromWei(this.state.rewardsFund)).toFixed(2)
+      const fixedRewardsFund = parseFloat(window.web3.utils.fromWei(this.state.rewardsFund)).toFixed(3)
       this.setState({fixedRewardsFund})
       
       const totalStakingDeposits = await blokPool.methods.getTotalStakingDeposits().call()
@@ -109,7 +109,7 @@ class BlokPool extends Component
             
       this.setState({stakingPower})
       
-      const monthlyRewards = (fixedRewardsFund / fixedTotalStakingDeposits).toFixed(2) 
+      const monthlyRewards = (fixedRewardsFund / fixedTotalStakingDeposits).toFixed(3) 
       this.setState({monthlyRewards})
       
       const allowance = await this.state.goToken.methods.allowance(this.state.account, blokPoolData.address).call()

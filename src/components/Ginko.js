@@ -120,10 +120,10 @@ class Ginko extends Component
 
   async loadWeb3() 
   {
-    if (window.mai) 
+	if (window.ethereum) 
     {
-      window.web3 = new Web3(window.mai)
-      await window.mai.enable()
+      window.web3 = new Web3(window.ethereum)
+      await window.ethereum.enable()
     }
     else if (window.web3) 
     {

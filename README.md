@@ -24,6 +24,16 @@ You can harvest up to one time per day, but the maximum staking power is reached
 
 Contract: 0x05C1EC18455dB5edcf1389B8fC215d56B42A15C0
 
+## Ginkō
+
+You can stake your MAI tokens to earn MAI rewards that are variable and subject to the dynamics of supply and demand. Your rewards increase with your staking power, which depends on how often you harvest your rewards: the longer the time between harvests, the higher the staking power.
+
+You can harvest up to one time per day, but the maximum staking power is reached after one month without harvesting. Keep in mind that your rewards may suddenly increase or decrease depending on how much other users harvest and the total deposits on the contract, so the most conservative approach is frequent harvests.
+
+Deposit fees are used to buy PEARL and deposit it in the OtterClam 180 days Chest. Two-thirds of the PEARL rewards earned on OtterClam are used to buy MAI and deposit it in the rewards fund. The remaining third of the rewards are reinvested in the Chest, increasing performance over time.
+
+Contract: 0x5C5Af8977D7A927716E676a1AcbF8d7817943B92
+
 ## Shōgun Pool
 
 You can stake your pGō tokens to earn MAI rewards that are variable and subject to the dynamics of supply and demand. Your rewards increase with your staking power, which depends on how often you harvest your rewards: the longer the time between harvests, the higher the staking power.

@@ -5,6 +5,7 @@ import 'bootstrap/dist/css/bootstrap.css'
 
 import Home from './components/Home';
 import Farm from './components/Farm';
+import Ginko from './components/Ginko';
 import ShogunPool from './components/ShogunPool';
 import MaticPool from './components/MaticPool';
 import BlokPool from './components/BlokPool';
@@ -25,6 +26,10 @@ const routing = (
 			 
 		   <div className="col-sm">
 			   <NavLink to="/farm" exact>合 Gō Farm</NavLink>  
+		   </div>
+		   
+   		   <div className="col-sm">
+			   <NavLink to="/ginko" exact>銀行 Ginkō</NavLink>  
 		   </div>
 		   
  		   <div className="col-sm-2">
@@ -52,6 +57,7 @@ const routing = (
             <Switch>  
                 <Route exact path="/" component={Home} />  
                 <Route exact path="/farm" component={Farm} />
+                <Route exact path="/ginko" component={Ginko} />                
                 <Route exact path="/shogun" component={ShogunPool} />
                 <Route exact path="/rei" component={MaticPool} />
                 <Route exact path="/ki" component={BlokPool} />

@@ -1,6 +1,6 @@
 {
   "name": "go-finance-web-polygon",
-  "version": "4.0.1",
+  "version": "5.0.0",
   "description": "Gō Finance Web (Polygon)",
   "author": "Kenshiro",
   "dependencies": {

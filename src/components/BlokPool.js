@@ -229,7 +229,7 @@ class BlokPool extends Component
                   </tr>
                   <tr>
                     <td>Deposit fee: </td>
-                    <td>10%</td>
+                    <td>10 %</td>
                   </tr> 
                 </tbody>
             </table>)

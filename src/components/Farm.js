@@ -212,11 +212,11 @@ class Farm extends Component
                   </tr>
                   <tr>
                     <td>Deposit fee: </td>
-                    <td>10%</td>
+                    <td>10 %</td>
                   </tr>
                   <tr>
                     <td>Daily APR: </td>
-                    <td>{parseFloat(this.state.dailyAPR).toFixed(2)}%</td>
+                    <td>{parseFloat(this.state.dailyAPR).toFixed(2)} %</td>
                   </tr>
                 </tbody>
             </table>)

@@ -107,10 +107,6 @@ class Farm extends Component
       const allowance = await this.state.goToken.methods.allowance(this.state.account, goFarmData.address).call()
       this.setState({allowance})
     }
-    else 
-    {
-      window.alert('Gō farm contract not deployed on your current network.')
-    }
   }
 
   async loadWeb3() 

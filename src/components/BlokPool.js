@@ -115,10 +115,6 @@ class BlokPool extends Component
       const allowance = await this.state.goToken.methods.allowance(this.state.account, blokPoolData.address).call()
       this.setState({allowance})
     }
-    else 
-    {
-      window.alert('BlokPool contract not deployed on your current network.')
-    }
   }
 
   async loadWeb3() 

@@ -115,10 +115,6 @@ class ShogunPool extends Component
       const allowance = await this.state.goToken.methods.allowance(this.state.account, shogunPoolData.address).call()
       this.setState({allowance})
     }
-    else 
-    {
-      window.alert('ShogunPool contract not deployed on your current network.')
-    }
   }
 
   async loadWeb3() 

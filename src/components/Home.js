@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import Web3 from 'web3'
 import GoToken from '../abis/GoToken.json'
 import GoFarm from '../abis/GoFarm.json'
+import MaticGoLP from '../abis/MaticGoLP.json'
+import MaticDaiLP from '../abis/MaticDaiLP.json'
 import rugdoc from '../pictures/rugdoc.png'
 
 class Home extends Component 
@@ -64,14 +66,38 @@ class Home extends Component
       
       const totalGoStaked = await goFarm.methods.getTotalGoStaked().call()
       this.setState({totalGoStaked})
-      
-      const stakingRatio = rewardsFund / totalGoStaked
-      const dailyAPR = (stakingRatio / 365) * 100
-      this.setState({dailyAPR})
     }
-    else 
+    
+    // Load MaticDaiLP    
+    const polygonNetworkId = 137
+    const maticDaiLpTokenAddress = "0xeef611894ceae652979c9d0dae1deb597790c6ee"
+    
+    if (networkId===polygonNetworkId) 
     {
-      window.alert('Gō farm contract not deployed on your current network.')
+	  const maticDaiLP = new web3.eth.Contract(MaticDaiLP.abi, maticDaiLpTokenAddress)  
+      const maticDaiReserves = await maticDaiLP.methods.getReserves().call()
+	  const maticReserves = maticDaiReserves[0]
+	  const daiReserves = maticDaiReserves[1]
+      const maticPriceUSD = daiReserves / maticReserves
+      
+      this.setState({maticPriceUSD})
+    }
+
+    // Load MaticGoLP    
+    const maticGoLpTokenAddress = "0xA9A419b1D3b2f9dD3530397b83f7242A1Dfe2d87"
+    
+    if (networkId===polygonNetworkId) 
+    {
+	  const maticGoLP = new web3.eth.Contract(MaticGoLP.abi, maticGoLpTokenAddress)  
+      const maticGoReserves = await maticGoLP.methods.getReserves().call()
+	  const maticReserves = maticGoReserves[0]
+	  const pGoReserves = maticGoReserves[1]
+      const pGoPriceMatic = maticReserves / pGoReserves
+      const pGoPriceUSD = pGoPriceMatic * this.state.maticPriceUSD
+      const marketCap = pGoPriceUSD * window.web3.utils.fromWei(this.state.totalSupply)
+
+      this.setState({pGoPriceUSD})
+      this.setState({marketCap})
     }
   }
 
@@ -99,11 +125,13 @@ class Home extends Component
     this.state = 
     {
       totalSupply: '0',
-      dailyAPR: '0',
       farmTreasury: '0',
       rewardsFund: '0',
       totalFarmBalance: '0',
-      totalGoStaked: '0'
+      totalGoStaked: '0',
+      maticPriceUSD: '0',
+      pGoPriceUSD: '0',
+      marketCap: '0'
     }
   } 
    
@@ -147,15 +175,19 @@ class Home extends Component
                                 <td>{window.web3.utils.fromWei(this.state.totalSupply)} pGō</td>
                             </tr>
                             <tr>
-                                <td>Daily APR: </td>
-                                <td>{parseFloat(this.state.dailyAPR).toFixed(2)} %</td>
+                                <td>Token price: </td>
+                                <td>{parseFloat(this.state.pGoPriceUSD).toFixed(4)} $</td>
                             </tr>
                             <tr>
-                                <td>Farm treasury: </td>
+                                <td>Market Cap: </td>
+                                <td>{parseInt(this.state.marketCap)} $</td>
+                            </tr>
+                            <tr>
+                                <td>Treasury: </td>
                                 <td>{parseInt(window.web3.utils.fromWei(this.state.farmTreasury))} pGō</td>
                             </tr>
                             <tr>
-                                <td>Rewards fund: </td>
+                                <td>Rewards fund: &nbsp;&nbsp;</td>
                                 <td>{parseInt(window.web3.utils.fromWei(this.state.rewardsFund))} pGō</td>
                             </tr>
                             <tr>
@@ -163,11 +195,7 @@ class Home extends Component
                                 <td>{parseInt(window.web3.utils.fromWei(this.state.totalGoStaked))} pGō</td>
                             </tr>
                             <tr>
-                              <td>Deposit fee: </td>
-                              <td>10 %</td>
-                            </tr>
-                            <tr>
-                                <td>Total farm balance: &nbsp;&nbsp;</td>
+                                <td>Farm balance: </td>
                                 <td>{parseInt(window.web3.utils.fromWei(this.state.totalFarmBalance))} pGō</td>
                             </tr>
                           </tbody>

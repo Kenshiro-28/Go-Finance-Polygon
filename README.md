@@ -70,9 +70,9 @@ You can stake your WETH tokens to earn WETH rewards that are variable and subjec
 
 You can harvest up to one time per day, but the maximum staking power is reached after one month without harvesting. Keep in mind that your rewards may suddenly increase or decrease depending on how much other users harvest and the total deposits on the vault, so the most conservative approach is frequent harvests.
 
-Deposit fees are used to buy pWings and deposit it in the JetSwap Pool. Two-thirds of the pWings rewards earned on JetSwap are used to buy WETH and deposit it in the rewards fund. The remaining third of the rewards are reinvested in the Pool, increasing performance over time.
+Deposit fees are used to buy PEARL and deposit it in the OtterClam 180 days Chest. Two-thirds of the PEARL rewards earned on OtterClam are used to buy WETH and deposit it in the rewards fund. The remaining third of the rewards are reinvested in the Chest, increasing performance over time.
 
-Contract: 0x8b8D923c6445E75AaBbD1322D4CdE7De9A0477cA
+Contract: 0x0F938EeED8d7189E41fE27ECe83802fFf33F52e0
 
 ## Website
 

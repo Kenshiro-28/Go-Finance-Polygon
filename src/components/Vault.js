@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Web3 from 'web3'
 import EthereumToken from '../abis/EthereumToken.json'
-import EthVaultAbi from '../abis/EthVault.json'
+import EthVaultAbi from '../abis/Vault.json'
 import logo from '../pictures/vault.png'
 
 class Vault extends Component 
@@ -28,6 +28,7 @@ class Vault extends Component
   {
     const polygonNetworkId = 137
     const ethereumTokenAddress = "0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619"
+	const vaultAddress = "0x0F938EeED8d7189E41fE27ECe83802fFf33F52e0"
   
     const web3 = window.web3
     const accounts = await web3.eth.getAccounts()
@@ -35,9 +36,10 @@ class Vault extends Component
     
     const networkId = await web3.eth.net.getId()
 
-    // Load EthereumToken
+    
     if (networkId===polygonNetworkId) 
     {  
+      // Load EthereumToken
       const ethereumToken = new web3.eth.Contract(EthereumToken.abi, ethereumTokenAddress)
       this.setState({ethereumToken})
           
@@ -46,15 +48,9 @@ class Vault extends Component
           
       const ethereumFixedBalance = (Math.floor(parseFloat(window.web3.utils.fromWei(this.state.ethereumBalance)) * 100000) / 100000).toFixed(5)
       this.setState({ethereumFixedBalance})
-    }
        
-    // Load Vault
-    const ethVaultData = EthVaultAbi.networks[networkId]
-    let ethVault
-    
-    if(ethVaultData) 
-    {
-      ethVault = new web3.eth.Contract(EthVaultAbi.abi, ethVaultData.address)
+      // Load Vault
+      const ethVault = new web3.eth.Contract(EthVaultAbi.abi, vaultAddress)
       this.setState({ethVault})
       
       const stakingDeposit = await ethVault.methods.getStakingDeposit().call({from: this.state.account})
@@ -109,7 +105,7 @@ class Vault extends Component
       const monthlyAPR = ((rewardsFund / totalStakingDeposits) * 100).toFixed(2) 
       this.setState({monthlyAPR})
       
-      const allowance = await this.state.ethereumToken.methods.allowance(this.state.account, ethVaultData.address).call()
+      const allowance = await this.state.ethereumToken.methods.allowance(this.state.account, vaultAddress).call()
       this.setState({allowance})
     }
     else 

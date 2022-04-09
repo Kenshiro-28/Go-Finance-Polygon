@@ -91,7 +91,7 @@ class MaticPool extends Component
       const totalStakingDeposits = await maticPool.methods.getTotalStakingDeposits().call()
       this.setState({totalStakingDeposits})
       
-      const fixedTotalStakingDeposits = parseFloat(window.web3.utils.fromWei(this.state.totalStakingDeposits)).toFixed(4)
+      const fixedTotalStakingDeposits = parseFloat(window.web3.utils.fromWei(this.state.totalStakingDeposits)).toFixed(3)
       this.setState({fixedTotalStakingDeposits})
       
       const harvestCooldownBlocks = await maticPool.methods.getHarvestCooldownBlocks().call()

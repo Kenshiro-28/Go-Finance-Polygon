@@ -1,6 +1,6 @@
 import React from 'react';  
 import ReactDOM from 'react-dom';  
-import {HashRouter as Router, Route, NavLink, Switch} from 'react-router-dom'   
+import {HashRouter as Router, Route, NavLink, Routes} from 'react-router-dom'   
 import 'bootstrap/dist/css/bootstrap.css'
 
 import Home from './components/Home';
@@ -54,17 +54,17 @@ const routing = (
 		   
 	    </div>
         <div>  
-            <Switch>  
-                <Route exact path="/" component={Home} />  
-                <Route exact path="/farm" component={Farm} />
-                <Route exact path="/ginko" component={Ginko} />                
-                <Route exact path="/shogun" component={ShogunPool} />
-                <Route exact path="/rei" component={MaticPool} />
-                <Route exact path="/ki" component={BlokPool} />
-                <Route exact path="/vault" component={Vault} />    
-                <Route exact path="/about" component={About} />  
-                <Route component={Notfound} />  
-            </Switch>  
+            <Routes>  
+                <Route path="/" element={<Home/>} />
+                <Route path="/farm" element={<Farm/>} />
+                <Route path="/ginko" element={<Ginko/>} />                
+                <Route path="/shogun" element={<ShogunPool/>} />
+                <Route path="/rei" element={<MaticPool/>} />
+                <Route path="/ki" element={<BlokPool/>} />
+                <Route path="/vault" element={<Vault/>} />    
+                <Route path="/about" element={<About/>} />  
+                <Route path="*" element={<Notfound/>} />  
+            </Routes>  
         </div>  
     </Router> 
 )  

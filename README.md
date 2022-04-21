@@ -40,9 +40,9 @@ You can stake your pGō tokens to earn MAI rewards that are variable and subject
 
 You can harvest up to one time per day, but the maximum staking power is reached after one month without harvesting. Keep in mind that your rewards may suddenly increase or decrease depending on how much other users harvest and the total deposits on the pool, so the most conservative approach is frequent harvests.
 
-Deposit fees are used to buy pWings and deposit it in the JetSwap Pool. Two-thirds of the pWings rewards earned on JetSwap are used to buy MAI and deposit it in the rewards fund. The remaining third of the rewards are reinvested in the Pool, increasing performance over time.
+Deposit fees are used to buy PEARL and deposit it in the OtterClam 180 days Chest. Two-thirds of the PEARL rewards earned on OtterClam are used to buy MAI and deposit it in the rewards fund. The remaining third of the rewards are reinvested in the Chest, increasing performance over time.
 
-Contract: 0x6f9FE69f8296Ec670C2A3BfB4e87897FC4e273D0
+Contract: 0xFea737e92E218c07bEf967705B101Ba560434c95
 
 ## Rei pool
 

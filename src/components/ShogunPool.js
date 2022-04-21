@@ -26,6 +26,9 @@ class ShogunPool extends Component
   
   async loadBlockchainData() 
   {
+	const polygonNetworkId = 137
+    const shogunPoolAddress = "0xFea737e92E218c07bEf967705B101Ba560434c95"  
+  
     const web3 = window.web3
     const accounts = await web3.eth.getAccounts()
     this.setState({account: accounts[0]})   
@@ -52,12 +55,9 @@ class ShogunPool extends Component
     }
     
     // Load ShogunPool
-    const shogunPoolData = ShogunPoolAbi.networks[networkId]
-    let shogunPool
-    
-    if(shogunPoolData) 
+    if (networkId===polygonNetworkId) 
     {
-      shogunPool = new web3.eth.Contract(ShogunPoolAbi.abi, shogunPoolData.address)
+      const shogunPool = new web3.eth.Contract(ShogunPoolAbi.abi, shogunPoolAddress)
       this.setState({shogunPool})
       
       const stakingDeposit = await shogunPool.methods.getStakingDeposit().call({from: this.state.account})
@@ -112,7 +112,7 @@ class ShogunPool extends Component
       const monthlyRewards = (fixedRewardsFund / fixedTotalStakingDeposits).toFixed(2) 
       this.setState({monthlyRewards})
       
-      const allowance = await this.state.goToken.methods.allowance(this.state.account, shogunPoolData.address).call()
+      const allowance = await this.state.goToken.methods.allowance(this.state.account, shogunPoolAddress).call()
       this.setState({allowance})
     }
   }

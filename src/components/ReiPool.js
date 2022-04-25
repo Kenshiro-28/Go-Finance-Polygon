@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 import Web3 from 'web3'
 import GoToken from '../abis/GoToken.json'
-import MaticPoolAbi from '../abis/MaticPool.json'
-import logo from '../pictures/matic.png'
+import ReiPoolAbi from '../abis/ReiPool.json'
+import logo from '../pictures/klima.png'
 
-class MaticPool extends Component 
+class ReiPool extends Component 
 {
   intervalID;
 
@@ -26,6 +26,9 @@ class MaticPool extends Component
   
   async loadBlockchainData() 
   {
+  	const polygonNetworkId = 137
+    const reiPoolAddress = "0x91b5a83eb4Ef50d9c98f44fCea7cc3572c29522F"
+  
     const web3 = window.web3
     const accounts = await web3.eth.getAccounts()
     this.setState({account: accounts[0]})   
@@ -51,53 +54,50 @@ class MaticPool extends Component
       window.alert('Gō contract not deployed on your current network.')
     }
     
-    // Load MaticPool
-    const maticPoolData = MaticPoolAbi.networks[networkId]
-    let maticPool
-    
-    if(maticPoolData) 
+    // Load ReiPool
+	if (networkId===polygonNetworkId) 
     {
-      maticPool = new web3.eth.Contract(MaticPoolAbi.abi, maticPoolData.address)
-      this.setState({maticPool})
+      const reiPool = new web3.eth.Contract(ReiPoolAbi.abi, reiPoolAddress)
+      this.setState({reiPool})
       
-      const stakingDeposit = await maticPool.methods.getStakingDeposit().call({from: this.state.account})
+      const stakingDeposit = await reiPool.methods.getStakingDeposit().call({from: this.state.account})
       this.setState({stakingDeposit})
       
       const fixedDeposit = parseFloat(window.web3.utils.fromWei(this.state.stakingDeposit)).toFixed(4)
       this.setState({fixedDeposit})
       
-      const stakingBlock = await maticPool.methods.getStakingBlock().call({from: this.state.account})
+      const stakingBlock = await reiPool.methods.getStakingBlock().call({from: this.state.account})
       this.setState({stakingBlock})
       
-      const blocksStaking = await maticPool.methods.computeBlocksStaking().call({from: this.state.account})
+      const blocksStaking = await reiPool.methods.computeBlocksStaking().call({from: this.state.account})
       this.setState({blocksStaking})
       
       let userReward = '0'
       
       if (stakingDeposit > 0)
-          userReward = await maticPool.methods.computeUserReward().call({from: this.state.account})
+          userReward = await reiPool.methods.computeUserReward().call({from: this.state.account})
 
       this.setState({userReward})
       
       const fixedReward = parseFloat(window.web3.utils.fromWei(this.state.userReward)).toFixed(4)
       this.setState({fixedReward})
  
-      const rewardsFund = await maticPool.methods.getRewardsFund().call()
+      const rewardsFund = await reiPool.methods.getRewardsFund().call()
       this.setState({rewardsFund})
       
       const fixedRewardsFund = parseFloat(window.web3.utils.fromWei(this.state.rewardsFund)).toFixed(3)
       this.setState({fixedRewardsFund})
       
-      const totalStakingDeposits = await maticPool.methods.getTotalStakingDeposits().call()
+      const totalStakingDeposits = await reiPool.methods.getTotalStakingDeposits().call()
       this.setState({totalStakingDeposits})
       
       const fixedTotalStakingDeposits = parseFloat(window.web3.utils.fromWei(this.state.totalStakingDeposits)).toFixed(3)
       this.setState({fixedTotalStakingDeposits})
       
-      const harvestCooldownBlocks = await maticPool.methods.getHarvestCooldownBlocks().call()
+      const harvestCooldownBlocks = await reiPool.methods.getHarvestCooldownBlocks().call()
       this.setState({harvestCooldownBlocks})
       
-      const stakingBlockRange = await maticPool.methods.getStakingBlockRange().call()
+      const stakingBlockRange = await reiPool.methods.getStakingBlockRange().call()
       this.setState({stakingBlockRange})
 
       let auxStakingPower = (blocksStaking / stakingBlockRange) * 100
@@ -112,7 +112,7 @@ class MaticPool extends Component
       const monthlyRewards = (fixedRewardsFund / fixedTotalStakingDeposits).toFixed(3) 
       this.setState({monthlyRewards})
       
-      const allowance = await this.state.goToken.methods.allowance(this.state.account, maticPoolData.address).call()
+      const allowance = await this.state.goToken.methods.allowance(this.state.account, reiPoolAddress).call()
       this.setState({allowance})
     }
   }
@@ -138,7 +138,7 @@ class MaticPool extends Component
   {
     const amount = this.state.goBalance
   
-    this.state.goToken.methods.approve(this.state.maticPool._address, amount).send({from: this.state.account})
+    this.state.goToken.methods.approve(this.state.reiPool._address, amount).send({from: this.state.account})
   }
 
   deposit = (amount) => 
@@ -148,17 +148,17 @@ class MaticPool extends Component
         
         window.alert('Increasing your deposit will reset your staking power. Harvest your pending rewards first or you will lose them.')
     else
-        this.state.maticPool.methods.deposit(amount).send({from: this.state.account})
+        this.state.reiPool.methods.deposit(amount).send({from: this.state.account})
   }
 
   withdraw = () => 
   {
-    this.state.maticPool.methods.withdraw().send({from: this.state.account})
+    this.state.reiPool.methods.withdraw().send({from: this.state.account})
   }
   
   harvest = () => 
   {
-    this.state.maticPool.methods.harvest().send({from: this.state.account})
+    this.state.reiPool.methods.harvest().send({from: this.state.account})
   }
   
   constructor(props) 
@@ -169,7 +169,7 @@ class MaticPool extends Component
     {
       account: '0x0',
       goToken: {},
-      maticPool: {},
+      reiPool: {},
       goBalance: '0',
       goFixedBalance: '0',
       stakingDeposit: '0',
@@ -213,11 +213,11 @@ class MaticPool extends Component
                   </tr>
                   <tr>
                     <td>Monthly rewards: &nbsp;&nbsp;</td>
-                    <td>{this.state.monthlyRewards} WMATIC (per token)</td>
+                    <td>{this.state.monthlyRewards} wsKLIMA (per token)</td>
                   </tr>
                   <tr>
                     <td>Rewards fund: </td>
-                    <td>{this.state.fixedRewardsFund} WMATIC</td>
+                    <td>{this.state.fixedRewardsFund} wsKLIMA</td>
                   </tr>
                   <tr>
                     <td>Total deposits: </td>
@@ -391,4 +391,4 @@ class MaticPool extends Component
    }
 }
 
-export default MaticPool;
+export default ReiPool;

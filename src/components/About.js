@@ -56,13 +56,13 @@ class About extends Component
           		<br /><p />
           		<p className="centered_text">----- 霊 Rei Pool -----</p>
           		<br />
-          		<p>You can stake your pGō tokens to earn WMATIC rewards that are variable and subject to the dynamics of supply and demand. Your rewards increase with your staking power, which depends on how often you harvest your rewards: the longer the time between harvests, the higher the staking power.</p>
+          		<p>You can stake your pGō tokens to earn wsKLIMA rewards that are variable and subject to the dynamics of supply and demand. Your rewards increase with your staking power, which depends on how often you harvest your rewards: the longer the time between harvests, the higher the staking power.</p>
           		
           		<p>You can harvest up to one time per day, but the maximum staking power is reached after one month without harvesting. Keep in mind that your rewards may suddenly increase or decrease depending on how much other users harvest and the total deposits on the pool, so the most conservative approach is frequent harvests.</p>
           		
-          		<p>Deposit fees are used to buy pWings and deposit it in the JetSwap Pool. Two-thirds of the pWings rewards earned on JetSwap are used to buy WMATIC and deposit it in the rewards fund. The remaining third of the rewards are reinvested in the Pool, increasing performance over time.</p>
+          		<p>Deposit fees are used to buy PEARL and deposit it in the OtterClam 180 days Chest. Two-thirds of the PEARL rewards earned on OtterClam are used to buy wsKLIMA and deposit it in the rewards fund. The remaining third of the rewards are reinvested in the Chest, increasing performance over time.</p>
           		
-          		<p>Contract: &nbsp;&nbsp;0xEa1970c45e9C58FA4cAD14D576Fb1c9C7191730c</p>
+          		<p>Contract: &nbsp;&nbsp;0x91b5a83eb4Ef50d9c98f44fCea7cc3572c29522F</p>
           		<br /><p />
           		<p className="centered_text">----- 気 Ki Pool -----</p>
           		<br />

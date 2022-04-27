@@ -70,9 +70,9 @@ class About extends Component
           		
           		<p>You can harvest up to one time per day, but the maximum staking power is reached after one month without harvesting. Keep in mind that your rewards may suddenly increase or decrease depending on how much other users harvest and the total deposits on the pool, so the most conservative approach is frequent harvests.</p>
           		
-          		<p>Deposit fees are used to buy pWings and deposit it in the JetSwap Pool. Two-thirds of the pWings rewards earned on JetSwap are used to buy BLOK and deposit it in the rewards fund. The remaining third of the rewards are reinvested in the Pool, increasing performance over time.</p>
+          		<p>Deposit fees are used to buy PEARL and deposit it in the OtterClam 180 days Chest. Two-thirds of the PEARL rewards earned on OtterClam are used to buy BLOK and deposit it in the rewards fund. The remaining third of the rewards are reinvested in the Chest, increasing performance over time.</p>
           		
-          		<p>Contract: &nbsp;&nbsp;0x5b5B4D7b3B5D6E27b190Be90d462a2dcE108fdc5</p>
+          		<p>Contract: &nbsp;&nbsp;0x7E0c38133a0f660E40658Ea0b9Ec3Ba32d64d357</p>
           		<br /><p />
           		<p className="centered_text">----- 金庫 Vault -----</p>
           		<br />

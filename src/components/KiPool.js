@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 import Web3 from 'web3'
 import GoToken from '../abis/GoToken.json'
-import BlokPoolAbi from '../abis/BlokPool.json'
+import KiPoolAbi from '../abis/KiPool.json'
 import logo from '../pictures/blok.gif'
 
-class BlokPool extends Component 
+class KiPool extends Component 
 {
   intervalID;
 
@@ -26,6 +26,9 @@ class BlokPool extends Component
   
   async loadBlockchainData() 
   {
+  	const polygonNetworkId = 137
+    const kiPoolAddress = "0x7E0c38133a0f660E40658Ea0b9Ec3Ba32d64d357"
+  
     const web3 = window.web3
     const accounts = await web3.eth.getAccounts()
     this.setState({account: accounts[0]})   
@@ -51,53 +54,50 @@ class BlokPool extends Component
       window.alert('Gō contract not deployed on your current network.')
     }
     
-    // Load BlokPool
-    const blokPoolData = BlokPoolAbi.networks[networkId]
-    let blokPool
-    
-    if(blokPoolData) 
+    // Load KiPool
+	if (networkId===polygonNetworkId) 
     {
-      blokPool = new web3.eth.Contract(BlokPoolAbi.abi, blokPoolData.address)
-      this.setState({blokPool})
+      const kiPool = new web3.eth.Contract(KiPoolAbi.abi, kiPoolAddress)
+      this.setState({kiPool})
       
-      const stakingDeposit = await blokPool.methods.getStakingDeposit().call({from: this.state.account})
+      const stakingDeposit = await kiPool.methods.getStakingDeposit().call({from: this.state.account})
       this.setState({stakingDeposit})
       
       const fixedDeposit = parseFloat(window.web3.utils.fromWei(this.state.stakingDeposit)).toFixed(4)
       this.setState({fixedDeposit})
       
-      const stakingBlock = await blokPool.methods.getStakingBlock().call({from: this.state.account})
+      const stakingBlock = await kiPool.methods.getStakingBlock().call({from: this.state.account})
       this.setState({stakingBlock})
       
-      const blocksStaking = await blokPool.methods.computeBlocksStaking().call({from: this.state.account})
+      const blocksStaking = await kiPool.methods.computeBlocksStaking().call({from: this.state.account})
       this.setState({blocksStaking})
       
       let userReward = '0'
       
       if (stakingDeposit > 0)
-          userReward = await blokPool.methods.computeUserReward().call({from: this.state.account})
+          userReward = await kiPool.methods.computeUserReward().call({from: this.state.account})
 
       this.setState({userReward})
       
       const fixedReward = parseFloat(window.web3.utils.fromWei(this.state.userReward)).toFixed(4)
       this.setState({fixedReward})
  
-      const rewardsFund = await blokPool.methods.getRewardsFund().call()
+      const rewardsFund = await kiPool.methods.getRewardsFund().call()
       this.setState({rewardsFund})
       
       const fixedRewardsFund = parseFloat(window.web3.utils.fromWei(this.state.rewardsFund)).toFixed(3)
       this.setState({fixedRewardsFund})
       
-      const totalStakingDeposits = await blokPool.methods.getTotalStakingDeposits().call()
+      const totalStakingDeposits = await kiPool.methods.getTotalStakingDeposits().call()
       this.setState({totalStakingDeposits})
       
       const fixedTotalStakingDeposits = parseFloat(window.web3.utils.fromWei(this.state.totalStakingDeposits)).toFixed(3)
       this.setState({fixedTotalStakingDeposits})
       
-      const harvestCooldownBlocks = await blokPool.methods.getHarvestCooldownBlocks().call()
+      const harvestCooldownBlocks = await kiPool.methods.getHarvestCooldownBlocks().call()
       this.setState({harvestCooldownBlocks})
       
-      const stakingBlockRange = await blokPool.methods.getStakingBlockRange().call()
+      const stakingBlockRange = await kiPool.methods.getStakingBlockRange().call()
       this.setState({stakingBlockRange})
 
       let auxStakingPower = (blocksStaking / stakingBlockRange) * 100
@@ -112,7 +112,7 @@ class BlokPool extends Component
       const monthlyRewards = (fixedRewardsFund / fixedTotalStakingDeposits).toFixed(3) 
       this.setState({monthlyRewards})
       
-      const allowance = await this.state.goToken.methods.allowance(this.state.account, blokPoolData.address).call()
+      const allowance = await this.state.goToken.methods.allowance(this.state.account, kiPoolAddress).call()
       this.setState({allowance})
     }
   }
@@ -138,7 +138,7 @@ class BlokPool extends Component
   {
     const amount = this.state.goBalance
   
-    this.state.goToken.methods.approve(this.state.blokPool._address, amount).send({from: this.state.account})
+    this.state.goToken.methods.approve(this.state.kiPool._address, amount).send({from: this.state.account})
   }
 
   deposit = (amount) => 
@@ -148,17 +148,17 @@ class BlokPool extends Component
         
         window.alert('Increasing your deposit will reset your staking power. Harvest your pending rewards first or you will lose them.')
     else
-        this.state.blokPool.methods.deposit(amount).send({from: this.state.account})
+        this.state.kiPool.methods.deposit(amount).send({from: this.state.account})
   }
 
   withdraw = () => 
   {
-    this.state.blokPool.methods.withdraw().send({from: this.state.account})
+    this.state.kiPool.methods.withdraw().send({from: this.state.account})
   }
   
   harvest = () => 
   {
-    this.state.blokPool.methods.harvest().send({from: this.state.account})
+    this.state.kiPool.methods.harvest().send({from: this.state.account})
   }
   
   constructor(props) 
@@ -169,7 +169,7 @@ class BlokPool extends Component
     {
       account: '0x0',
       goToken: {},
-      blokPool: {},
+      kiPool: {},
       goBalance: '0',
       goFixedBalance: '0',
       stakingDeposit: '0',
@@ -389,4 +389,4 @@ class BlokPool extends Component
    }
 }
 
-export default BlokPool;
+export default KiPool;

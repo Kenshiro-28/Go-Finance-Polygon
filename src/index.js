@@ -8,7 +8,7 @@ import Farm from './components/Farm';
 import Ginko from './components/Ginko';
 import ShogunPool from './components/ShogunPool';
 import ReiPool from './components/ReiPool';
-import BlokPool from './components/BlokPool';
+import KiPool from './components/KiPool';
 import Vault from './components/Vault';
 import About from './components/About';
 
@@ -60,7 +60,7 @@ const routing = (
                 <Route path="/ginko" element={<Ginko/>} />                
                 <Route path="/shogun" element={<ShogunPool/>} />
                 <Route path="/rei" element={<ReiPool/>} />
-                <Route path="/ki" element={<BlokPool/>} />
+                <Route path="/ki" element={<KiPool/>} />
                 <Route path="/vault" element={<Vault/>} />    
                 <Route path="/about" element={<About/>} />  
                 <Route path="*" element={<Notfound/>} />  

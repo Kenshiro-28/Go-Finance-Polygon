@@ -28,7 +28,7 @@ class Vault extends Component
   {
     const polygonNetworkId = 137
     const ethereumTokenAddress = "0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619"
-	const vaultAddress = "0x0F938EeED8d7189E41fE27ECe83802fFf33F52e0"
+	const vaultAddress = "0xEAD65816Bc4Ea40e811571f27e1C3436Cf7Ce75f"
   
     const web3 = window.web3
     const accounts = await web3.eth.getAccounts()

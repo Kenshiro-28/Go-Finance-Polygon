@@ -1,14 +1,14 @@
 # Gō Finance
 
-Gō Finance is a 100% decentralized DeFi platform with an open source web interface that anyone can download and run locally on their computer.
+Gō Finance is a cooperative DeFi platform. To use the farms, users must contribute to the shared fund by paying deposit fees. Smart contracts use the shared fund to automatically execute custom strategies that generate rewards for all depositors.
 
-Smart contracts have no owner privileges and run an immutable set of rules. They are deployed on Polygon and Binance Smart Chain.
+The web interface is open source and anyone can download and run it locally on their computer. Smart contracts have no owner privileges and run an immutable set of rules. They are deployed on BSC, Polygon and Fantom.
 
 Keep in mind that trading is a risky activity that can involve a loss of money. You should only invest the amount you can afford to lose.
 
 ## Tokenomics
 
-pGō is a fully decentralized token with limited supply and very slow issuance, which makes it a good store of value. The name comes from the gō (合) or cup, which is a traditional Japanese unit used for a serving of rice and a cup of sake in Japanese cuisine.
+pGō is a fully decentralized token that can be staked to earn rewards. There are performance fees on some strategies that buy pGō from the market, which helps increase its price. The name comes from the gō (合) or cup, which is a traditional Japanese unit used for a serving of rice and a cup of sake in Japanese cuisine.
 
 Token name: pGō
 
@@ -18,61 +18,21 @@ Contract: 0x98D23ADA1Da268Bc10E2e0d1585C47971C4B89DD
 
 ## Gō farm
 
-You can stake your pGō tokens to earn pGō rewards that are variable and subject to the dynamics of supply and demand. Your rewards increase with your staking power, which depends on how often you harvest your rewards: the longer the time between harvests, the higher the staking power.
+You can deposit your pGō tokens to earn pGō rewards that are variable and subject to the dynamics of supply and demand. Your rewards increase with your staking power, which depends on how often you harvest your rewards: the longer the time between harvests, the higher the staking power.
 
-You can harvest up to one time per day, but the maximum staking power is reached after one year without harvesting. Keep in mind that your rewards may suddenly increase or decrease depending on how much other users harvest and the total deposits on the farm, so the most conservative approach is frequent harvests.
+You can harvest up to one time per day, but the maximum staking power is reached after one year without harvesting, at which point you must harvest to continue earning rewards.
 
 Contract: 0x05C1EC18455dB5edcf1389B8fC215d56B42A15C0
 
-## Ginkō
-
-You can stake your MAI tokens to earn MAI rewards that are variable and subject to the dynamics of supply and demand. Your rewards increase with your staking power, which depends on how often you harvest your rewards: the longer the time between harvests, the higher the staking power.
-
-You can harvest up to one time per day, but the maximum staking power is reached after one month without harvesting. Keep in mind that your rewards may suddenly increase or decrease depending on how much other users harvest and the total deposits on the contract, so the most conservative approach is frequent harvests.
-
-Deposit fees are used to buy PEARL and deposit it in the OtterClam 180 days Chest. Two-thirds of the PEARL rewards earned on OtterClam are used to buy MAI and deposit it in the rewards fund. The remaining third of the rewards are reinvested in the Chest, increasing performance over time.
-
-Contract: 0x5C5Af8977D7A927716E676a1AcbF8d7817943B92
-
-## Shōgun Pool
-
-You can stake your pGō tokens to earn MAI rewards that are variable and subject to the dynamics of supply and demand. Your rewards increase with your staking power, which depends on how often you harvest your rewards: the longer the time between harvests, the higher the staking power.
-
-You can harvest up to one time per day, but the maximum staking power is reached after one month without harvesting. Keep in mind that your rewards may suddenly increase or decrease depending on how much other users harvest and the total deposits on the pool, so the most conservative approach is frequent harvests.
-
-Deposit fees are used to buy PEARL and deposit it in the OtterClam 180 days Chest. Two-thirds of the PEARL rewards earned on OtterClam are used to buy MAI and deposit it in the rewards fund. The remaining third of the rewards are reinvested in the Chest, increasing performance over time.
-
-Contract: 0xFea737e92E218c07bEf967705B101Ba560434c95
-
-## Rei pool
-
-You can stake your pGō tokens to earn wsKLIMA rewards that are variable and subject to the dynamics of supply and demand. Your rewards increase with your staking power, which depends on how often you harvest your rewards: the longer the time between harvests, the higher the staking power.
-
-You can harvest up to one time per day, but the maximum staking power is reached after one month without harvesting. Keep in mind that your rewards may suddenly increase or decrease depending on how much other users harvest and the total deposits on the pool, so the most conservative approach is frequent harvests.
-
-Deposit fees are used to buy PEARL and deposit it in the OtterClam 180 days Chest. Two-thirds of the PEARL rewards earned on OtterClam are used to buy wsKLIMA and deposit it in the rewards fund. The remaining third of the rewards are reinvested in the Chest, increasing performance over time.
-
-Contract: 0x91b5a83eb4Ef50d9c98f44fCea7cc3572c29522F
-
-## Ki Pool
-
-You can stake your pGō tokens to earn BLOK rewards that are variable and subject to the dynamics of supply and demand. Your rewards increase with your staking power, which depends on how often you harvest your rewards: the longer the time between harvests, the higher the staking power.
-
-You can harvest up to one time per day, but the maximum staking power is reached after one month without harvesting. Keep in mind that your rewards may suddenly increase or decrease depending on how much other users harvest and the total deposits on the pool, so the most conservative approach is frequent harvests.
-
-Deposit fees are used to buy PEARL and deposit it in the OtterClam 180 days Chest. Two-thirds of the PEARL rewards earned on OtterClam are used to buy BLOK and deposit it in the rewards fund. The remaining third of the rewards are reinvested in the Chest, increasing performance over time.
-
-Contract: 0x7E0c38133a0f660E40658Ea0b9Ec3Ba32d64d357
-
 ## Vault
 
-You can stake your WETH tokens to earn WETH rewards that are variable and subject to the dynamics of supply and demand. Your rewards increase with your staking power, which depends on how often you harvest your rewards: the longer the time between harvests, the higher the staking power.
+You can deposit your WETH tokens to earn WETH rewards that are variable and subject to the dynamics of supply and demand. Your rewards increase with your staking power, which depends on how often you harvest your rewards: the longer the time between harvests, the higher the staking power.
 
-You can harvest up to one time per day, but the maximum staking power is reached after one month without harvesting. Keep in mind that your rewards may suddenly increase or decrease depending on how much other users harvest and the total deposits on the vault, so the most conservative approach is frequent harvests.
+You can harvest up to one time per day, but the maximum staking power is reached after one month without harvesting, at which point you must harvest to continue earning rewards.
 
-Deposit fees are used to buy PEARL and deposit it in the OtterClam 180 days Chest. Two-thirds of the PEARL rewards earned on OtterClam are used to buy WETH and deposit it in the rewards fund. The remaining third of the rewards are reinvested in the Chest, increasing performance over time.
+Deposit fees are used to buy CLAM and deposit it in Pearl Bank. Two-thirds of the USD+ rewards earned on Pearl Bank are used to buy WETH and deposit it in the rewards fund. The remaining third of the rewards are reinvested in Pearl Bank, increasing performance over time.
 
-Contract: 0x0F938EeED8d7189E41fE27ECe83802fFf33F52e0
+Contract: 0xEAD65816Bc4Ea40e811571f27e1C3436Cf7Ce75f
 
 ## Website
 

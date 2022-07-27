@@ -84,7 +84,7 @@ class Home extends Component
     }
 
     // Load MaticGoLP    
-    const maticGoLpTokenAddress = "0xA9A419b1D3b2f9dD3530397b83f7242A1Dfe2d87"
+    const maticGoLpTokenAddress = "0x42b3d44abb0697452aa7ca31106f716b62660b5a"
     
     if (networkId===polygonNetworkId) 
     {

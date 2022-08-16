@@ -24,6 +24,18 @@ You can harvest up to one time per day, but the maximum staking power is reached
 
 Contract: 0x05C1EC18455dB5edcf1389B8fC215d56B42A15C0
 
+## Ginkō
+
+Decentraland is a decentralized virtual reality platform powered by the Ethereum blockchain. Within the Decentraland platform, users can create, experience, and monetize their content and applications. The land is divided into parcels that are permanently owned by community members and purchased with MANA, Decentraland's cryptocurrency token.
+
+You can deposit your MANA tokens to earn MANA rewards that are variable and subject to the dynamics of supply and demand. Your rewards increase with your staking power, which depends on how often you harvest your rewards: the longer the time between harvests, the higher the staking power.
+
+You can harvest up to one time per day, but the maximum staking power is reached after one month without harvesting, at which point you must harvest to continue earning rewards.
+
+Deposit fees are used to buy CLAM and deposit it in Pearl Bank. Two-thirds of the USD+ rewards earned on Pearl Bank are used to buy MANA and deposit it in the rewards fund. The remaining third of the rewards are reinvested in Pearl Bank, increasing performance over time.
+
+Contract: 0x052034bA1dA874cc49b5B917C67bBBbC605dCfE5
+
 ## Vault
 
 You can deposit your WETH tokens to earn WETH rewards that are variable and subject to the dynamics of supply and demand. Your rewards increase with your staking power, which depends on how often you harvest your rewards: the longer the time between harvests, the higher the staking power.

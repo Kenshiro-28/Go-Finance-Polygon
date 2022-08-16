@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Web3 from 'web3'
-import MaiToken from '../abis/MaiToken.json'
+import ManaToken from '../abis/ManaToken.json'
 import GinkoAbi from '../abis/Ginko.json'
 import logo from '../pictures/ginko.png'
 
@@ -27,7 +27,8 @@ class Ginko extends Component
   async loadBlockchainData() 
   {
     const polygonNetworkId = 137
-    const maiTokenAddress = "0xa3Fa99A148fA48D14Ed51d610c367C61876997F1"
+    const manaTokenAddress = "0xA1c57f48F0Deb89f569dFbE6E2B7f46D33606fD4"
+    const ginkoAddress = "0x052034bA1dA874cc49b5B917C67bBBbC605dCfE5"
   
     const web3 = window.web3
     const accounts = await web3.eth.getAccounts()
@@ -35,32 +36,26 @@ class Ginko extends Component
     
     const networkId = await web3.eth.net.getId()
 
-    // Load MaiToken
     if (networkId===polygonNetworkId) 
     {  
-      const maiToken = new web3.eth.Contract(MaiToken.abi, maiTokenAddress)
-      this.setState({maiToken})
+      // Load ManaToken
+      const manaToken = new web3.eth.Contract(ManaToken.abi, manaTokenAddress)
+      this.setState({manaToken})
           
-      const maiBalance = await maiToken.methods.balanceOf(this.state.account).call()
-      this.setState({maiBalance})
+      const manaBalance = await manaToken.methods.balanceOf(this.state.account).call()
+      this.setState({manaBalance})
           
-      const maiFixedBalance = (Math.floor(parseFloat(window.web3.utils.fromWei(this.state.maiBalance)) * 100) / 100).toFixed(2)
-      this.setState({maiFixedBalance})
-    }
-       
-    // Load Ginko
-    const ginkoData = GinkoAbi.networks[networkId]
-    let ginko
-    
-    if(ginkoData) 
-    {
-      ginko = new web3.eth.Contract(GinkoAbi.abi, ginkoData.address)
+      const manaFixedBalance = (Math.floor(parseFloat(window.web3.utils.fromWei(this.state.manaBalance)) * 100000) / 100000).toFixed(5)
+      this.setState({manaFixedBalance})
+
+      // Load Ginko
+      const ginko = new web3.eth.Contract(GinkoAbi.abi, ginkoAddress)
       this.setState({ginko})
       
       const stakingDeposit = await ginko.methods.getStakingDeposit().call({from: this.state.account})
       this.setState({stakingDeposit})
       
-      const fixedDeposit = parseFloat(window.web3.utils.fromWei(this.state.stakingDeposit)).toFixed(2)
+      const fixedDeposit = parseFloat(window.web3.utils.fromWei(this.state.stakingDeposit)).toFixed(5)
       this.setState({fixedDeposit})
       
       const stakingBlock = await ginko.methods.getStakingBlock().call({from: this.state.account})
@@ -76,20 +71,20 @@ class Ginko extends Component
 
       this.setState({userReward})
       
-      const fixedReward = parseFloat(window.web3.utils.fromWei(this.state.userReward)).toFixed(2)
+      const fixedReward = parseFloat(window.web3.utils.fromWei(this.state.userReward)).toFixed(5)
       this.setState({fixedReward})
  
       const rewardsFund = await ginko.methods.getRewardsFund().call()
       this.setState({rewardsFund})
       
-      const fixedRewardsFund = parseInt(window.web3.utils.fromWei(this.state.rewardsFund))
+      const fixedRewardsFund = parseFloat(window.web3.utils.fromWei(this.state.rewardsFund)).toFixed(5)
       this.setState({fixedRewardsFund})
       
       const totalStakingDeposits = await ginko.methods.getTotalStakingDeposits().call()
       this.setState({totalStakingDeposits})
       
-      const fixedTotalStakingDeposits = parseInt(window.web3.utils.fromWei(this.state.totalStakingDeposits))
-      this.setState({fixedTotalStakingDeposits})
+      const fixedTotalStakingDeposits = parseFloat(window.web3.utils.fromWei(this.state.totalStakingDeposits)).toFixed(5)
+      this.setState({fixedTotalStakingDeposits})      
       
       const harvestCooldownBlocks = await ginko.methods.getHarvestCooldownBlocks().call()
       this.setState({harvestCooldownBlocks})
@@ -109,7 +104,7 @@ class Ginko extends Component
       const monthlyAPR = ((rewardsFund / totalStakingDeposits) * 100).toFixed(2) 
       this.setState({monthlyAPR})
       
-      const allowance = await this.state.maiToken.methods.allowance(this.state.account, ginkoData.address).call()
+      const allowance = await this.state.manaToken.methods.allowance(this.state.account, ginkoAddress).call()
       this.setState({allowance})
     }
     else 
@@ -137,9 +132,9 @@ class Ginko extends Component
 
   approve = () => 
   {
-    const amount = this.state.maiBalance
+    const amount = this.state.manaBalance
   
-    this.state.maiToken.methods.approve(this.state.ginko._address, amount).send({from: this.state.account})
+    this.state.manaToken.methods.approve(this.state.ginko._address, amount).send({from: this.state.account})
   }
 
   deposit = (amount) => 
@@ -169,10 +164,10 @@ class Ginko extends Component
     this.state = 
     {
       account: '0x0',
-      maiToken: {},
+      manaToken: {},
       ginko: {},
-      maiBalance: '0',
-      maiFixedBalance: '0',
+      manaBalance: '0',
+      manaFixedBalance: '0',
       stakingDeposit: '0',
       fixedDeposit: '0',
       stakingBlock: '0',
@@ -198,7 +193,7 @@ class Ginko extends Component
                 <tbody>
                   <tr>
                     <td>Balance: </td>
-                    <td>{this.state.maiFixedBalance} MAI</td>
+                    <td>{this.state.manaFixedBalance} MANA</td>
                   </tr>
                   <tr>
                     <td>Blocks staking: </td>
@@ -214,11 +209,11 @@ class Ginko extends Component
                   </tr>
                   <tr>
                     <td>Rewards fund: </td>
-                    <td>{this.state.fixedRewardsFund} MAI</td>
+                    <td>{this.state.fixedRewardsFund} MANA</td>
                   </tr>
                   <tr>
                     <td>Total deposits: </td>
-                    <td>{this.state.fixedTotalStakingDeposits} MAI</td>
+                    <td>{this.state.fixedTotalStakingDeposits} MANA</td>
                   </tr>
                   <tr>
                     <td>Monthly APR: </td>
@@ -323,7 +318,7 @@ class Ginko extends Component
     let returnValue
 
     //Check deposit section
-    if (parseInt(this.state.allowance) >= parseInt(this.state.maiBalance))
+    if (parseInt(this.state.allowance) >= parseInt(this.state.manaBalance))
         depositSection = depositButton;
             
     //Check withdraw section

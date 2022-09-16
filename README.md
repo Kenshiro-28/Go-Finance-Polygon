@@ -36,6 +36,16 @@ Deposit fees are used to buy CLAM and deposit it in Pearl Bank. Two-thirds of th
 
 Contract: 0x052034bA1dA874cc49b5B917C67bBBbC605dCfE5
 
+## Rei Pool
+
+You can deposit your pGō tokens to earn CRV rewards that are variable and subject to the dynamics of supply and demand. Your rewards increase with your staking power, which depends on how often you harvest your rewards: the longer the time between harvests, the higher the staking power.
+
+You can harvest up to one time per day, but the maximum staking power is reached after one month without harvesting, at which point you must harvest to continue earning rewards.
+
+Deposit fees are used to buy DAI and deposit it in the atricrypto3 gauge of Curve DAO. Two-thirds of the CRV rewards earned on the atricrypto3 gauge are deposited in the rewards fund. The remaining third of the rewards are reinvested in the atricrypto3 gauge, increasing performance over time.
+
+Contract: 0x9e69f7cD59585C1f0A9e49BE258202Cd7D34E552
+
 ## Vault
 
 You can deposit your WETH tokens to earn WETH rewards that are variable and subject to the dynamics of supply and demand. Your rewards increase with your staking power, which depends on how often you harvest your rewards: the longer the time between harvests, the higher the staking power.

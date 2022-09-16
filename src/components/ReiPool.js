@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import Web3 from 'web3'
 import GoToken from '../abis/GoToken.json'
 import ReiPoolAbi from '../abis/ReiPool.json'
-import logo from '../pictures/klima.png'
+import logo from '../pictures/curve.png'
 
 class ReiPool extends Component 
 {
@@ -27,7 +27,7 @@ class ReiPool extends Component
   async loadBlockchainData() 
   {
   	const polygonNetworkId = 137
-    const reiPoolAddress = "0x91b5a83eb4Ef50d9c98f44fCea7cc3572c29522F"
+    const reiPoolAddress = "0x9e69f7cD59585C1f0A9e49BE258202Cd7D34E552"
   
     const web3 = window.web3
     const accounts = await web3.eth.getAccounts()
@@ -85,13 +85,13 @@ class ReiPool extends Component
       const rewardsFund = await reiPool.methods.getRewardsFund().call()
       this.setState({rewardsFund})
       
-      const fixedRewardsFund = parseFloat(window.web3.utils.fromWei(this.state.rewardsFund)).toFixed(3)
+      const fixedRewardsFund = parseFloat(window.web3.utils.fromWei(this.state.rewardsFund)).toFixed(4)
       this.setState({fixedRewardsFund})
       
       const totalStakingDeposits = await reiPool.methods.getTotalStakingDeposits().call()
       this.setState({totalStakingDeposits})
       
-      const fixedTotalStakingDeposits = parseFloat(window.web3.utils.fromWei(this.state.totalStakingDeposits)).toFixed(3)
+      const fixedTotalStakingDeposits = parseFloat(window.web3.utils.fromWei(this.state.totalStakingDeposits)).toFixed(4)
       this.setState({fixedTotalStakingDeposits})
       
       const harvestCooldownBlocks = await reiPool.methods.getHarvestCooldownBlocks().call()
@@ -109,7 +109,7 @@ class ReiPool extends Component
             
       this.setState({stakingPower})
       
-      const monthlyRewards = (fixedRewardsFund / fixedTotalStakingDeposits).toFixed(3) 
+      const monthlyRewards = (fixedRewardsFund / fixedTotalStakingDeposits).toFixed(4) 
       this.setState({monthlyRewards})
       
       const allowance = await this.state.goToken.methods.allowance(this.state.account, reiPoolAddress).call()
@@ -213,11 +213,11 @@ class ReiPool extends Component
                   </tr>
                   <tr>
                     <td>Monthly rewards: &nbsp;&nbsp;</td>
-                    <td>{this.state.monthlyRewards} wsKLIMA (per token)</td>
+                    <td>{this.state.monthlyRewards} CRV (per token)</td>
                   </tr>
                   <tr>
                     <td>Rewards fund: </td>
-                    <td>{this.state.fixedRewardsFund} wsKLIMA</td>
+                    <td>{this.state.fixedRewardsFund} CRV</td>
                   </tr>
                   <tr>
                     <td>Total deposits: </td>

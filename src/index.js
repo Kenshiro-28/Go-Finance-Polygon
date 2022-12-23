@@ -10,6 +10,7 @@ import Ginko from './components/Ginko';
 import ReiPool from './components/ReiPool';
 //import KiPool from './components/KiPool';*/
 import Vault from './components/Vault';
+import Ryu from './components/Ryu';
 import About from './components/About';
 
 import './go_finance.css';  
@@ -49,6 +50,10 @@ const routing = (
 		   </div>
 		   
 		   <div className="col-sm">
+			   <NavLink to="/ryu" exact>竜 Ryū NFT</NavLink>  
+		   </div>		   
+		   
+		   <div className="col-sm">
 			   <NavLink to="/about" exact>情報 About</NavLink>  
 		   </div>
 		   
@@ -61,7 +66,8 @@ const routing = (
 {/*                 <Route path="/shogun" element={<ShogunPool/>} />  */}
                 <Route path="/rei" element={<ReiPool/>} />
 {/*                 <Route path="/ki" element={<KiPool/>} />*/}	
-                <Route path="/vault" element={<Vault/>} />    
+                <Route path="/vault" element={<Vault/>} />   
+                <Route path="/ryu" element={<Ryu/>} />                    
                 <Route path="/about" element={<About/>} />  
                 <Route path="*" element={<Notfound/>} />  
             </Routes>  

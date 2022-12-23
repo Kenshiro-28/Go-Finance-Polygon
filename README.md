@@ -56,6 +56,16 @@ Deposit fees are used to buy CLAM and deposit it in Pearl Bank. Two-thirds of th
 
 Contract: 0xEAD65816Bc4Ea40e811571f27e1C3436Cf7Ce75f
 
+## Ryū NFT
+
+You can earn MANA rewards just by having Ryū NFTs in your wallet. It's possible to mint Ryū NFTs for just 10 cents until the maximum supply of one billion is reached. You can also buy and sell Ryū NFTs on the market. Your rewards increase with your staking power, which depends on how often you harvest your rewards: the longer the time between harvests, the higher the staking power.
+
+You can harvest up to one time per day, but the maximum staking power is reached after one year without harvesting, at which point you must harvest to continue earning rewards.
+
+Minting fees are deposited in the atricrypto3 gauge of Curve DAO. Two-thirds of the CRV rewards earned on the atricrypto3 gauge are used to buy MANA and deposit it in the rewards fund. The remaining third of the rewards are reinvested in the atricrypto3 gauge, increasing performance over time.
+
+Contract: 0x15D43742b98a9FAeb56d8C6baAcaa586F8223617
+
 ## Website
 
 The safest way to use the web client is to install it on your computer. Optionally, you can use my web server (https://polygon.go-finance.org)

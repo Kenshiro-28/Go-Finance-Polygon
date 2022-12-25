@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import Web3 from 'web3'
 import RyuNFT from '../abis/RyuNFT.json'
-import RyuMinter from '../abis/RyuMinter.json'
 import DaiToken from '../abis/DaiToken.json'
 import logo from '../pictures/ryu.jpeg'
 
@@ -28,8 +27,7 @@ class Ryu extends Component
   async loadBlockchainData() 
   {
     const polygonNetworkId = 137
-    const ryuNFTAddress = "0x15D43742b98a9FAeb56d8C6baAcaa586F8223617"
-	const ryuMinterAddress = "0x6cAfcBbf55a211cbc69D2159343d686a0cfB9309"
+    const ryuNFTAddress = "0x3f93D887055B6146fcDfe753685B371419D775C8"
 	const daiTokenAddress = "0x8f3Cf7ad23Cd3CaDbD9735AFf958023239c6A063"
 
 	const mintPrice = 0.1 //DAI
@@ -106,12 +104,8 @@ class Ryu extends Component
       const daiFixedBalance = parseFloat(window.web3.utils.fromWei(this.state.daiBalance)).toFixed(2)
       this.setState({daiFixedBalance})      
       
-      const daiAllowance = await this.state.daiToken.methods.allowance(this.state.account, ryuMinterAddress).call()
+      const daiAllowance = await this.state.daiToken.methods.allowance(this.state.account, ryuNFTAddress).call()
       this.setState({daiAllowance})
-      
-      // Load Ryu Minter
-      const ryuMinter = new web3.eth.Contract(RyuMinter.abi, ryuMinterAddress)
-      this.setState({ryuMinter})      
     }
     else 
     {
@@ -138,7 +132,7 @@ class Ryu extends Component
 
   approve = () => 
   {	
-    this.state.daiToken.methods.approve(this.state.ryuMinter._address, this.state.minimumDaiAllowance.toString()).send({from: this.state.account})
+    this.state.daiToken.methods.approve(this.state.ryuNFT._address, this.state.minimumDaiAllowance.toString()).send({from: this.state.account})
   }
 
   mint = (amount) => 
@@ -148,7 +142,7 @@ class Ryu extends Component
         
         window.alert('Minting more NFTs will reset your staking power. Harvest your pending rewards first or you will lose them.')
     else
-        this.state.ryuMinter.methods.mintRyuNFT(amount).send({from: this.state.account})
+        this.state.ryuNFT.methods.mintBatch(amount).send({from: this.state.account})
   }
   
   harvest = () => 
@@ -164,7 +158,6 @@ class Ryu extends Component
     {
       account: '0x0',
       ryuNFT: {},
-      ryuMinter: {},
       daiToken: {},
       ryuBalance: '0',
       totalSupply: '1',      

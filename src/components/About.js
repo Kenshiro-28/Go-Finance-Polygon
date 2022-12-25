@@ -74,7 +74,7 @@ class About extends Component
           		
           		<p>Minting fees are deposited in the atricrypto3 gauge of Curve DAO. Two-thirds of the CRV rewards earned on the atricrypto3 gauge are used to buy MANA and deposit it in the rewards fund. The remaining third of the rewards are reinvested in the atricrypto3 gauge, increasing performance over time.</p>
           		
-          		<p>Contract: &nbsp;&nbsp;0x15D43742b98a9FAeb56d8C6baAcaa586F8223617</p>
+          		<p>Contract: &nbsp;&nbsp;0x3f93D887055B6146fcDfe753685B371419D775C8</p>
           		<br /><p />          		
           		<p className="centered_text">----- Disclaimer -----</p>
           		<br />

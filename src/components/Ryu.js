@@ -27,7 +27,7 @@ class Ryu extends Component
   async loadBlockchainData() 
   {
     const polygonNetworkId = 137
-    const ryuNFTAddress = "0x3f93D887055B6146fcDfe753685B371419D775C8"
+    const ryuNFTAddress = "0x636B36e405CAF5799463A9B3694E0597Ee11f439"
 	const daiTokenAddress = "0x8f3Cf7ad23Cd3CaDbD9735AFf958023239c6A063"
 
 	const mintPrice = 0.1 //DAI

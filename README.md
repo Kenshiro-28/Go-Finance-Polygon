@@ -64,7 +64,7 @@ You can harvest up to one time per day, but the maximum staking power is reached
 
 Minting fees are deposited in the atricrypto3 gauge of Curve DAO. Two-thirds of the CRV rewards earned on the atricrypto3 gauge are used to buy MANA and deposit it in the rewards fund. The remaining third of the rewards are reinvested in the atricrypto3 gauge, increasing performance over time.
 
-Contract: 0x3f93D887055B6146fcDfe753685B371419D775C8
+Contract: 0x636B36e405CAF5799463A9B3694E0597Ee11f439
 
 ## Website
 

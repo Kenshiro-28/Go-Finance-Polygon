@@ -68,7 +68,7 @@ Contract: 0x636B36e405CAF5799463A9B3694E0597Ee11f439
 
 ## Website
 
-The safest way to use the web client is to install it on your computer. Optionally, you can use my web server (https://polygon.go-finance.org)
+The safest way to use the web client is to install it on your computer. Optionally, you can use my web server (https://go-finance.org)
 
 ## Installing
 

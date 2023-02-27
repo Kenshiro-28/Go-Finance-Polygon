@@ -8,7 +8,7 @@ Keep in mind that trading is a risky activity that can involve a loss of money. 
 
 ## Tokenomics
 
-pGō is a fully decentralized token that can be staked to earn rewards. There are performance fees on some strategies that buy pGō from the market, which helps increase its price. The name comes from the gō (合) or cup, which is a traditional Japanese unit used for a serving of rice and a cup of sake in Japanese cuisine.
+pGō is a fully decentralized token that can be staked to earn rewards. The name comes from the gō (合) or cup, which is a traditional Japanese unit used for a serving of rice and a cup of sake in Japanese cuisine.
 
 Token name: pGō
 

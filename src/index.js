@@ -5,11 +5,7 @@ import 'bootstrap/dist/css/bootstrap.css'
 
 import Home from './components/Home';
 import Farm from './components/Farm';
-import Ginko from './components/Ginko';
-//import ShogunPool from './components/ShogunPool';
 import ReiPool from './components/ReiPool';
-//import KiPool from './components/KiPool';*/
-import Vault from './components/Vault';
 import Ryu from './components/Ryu';
 import About from './components/About';
 
@@ -30,23 +26,7 @@ const routing = (
 		   </div>
 		   
    		   <div className="col-sm">
-			   <NavLink to="/ginko" exact>銀行 Ginkō</NavLink>  
-		   </div>
-{/*		   
- 		   <div className="col-sm-2">
-			   <NavLink to="/shogun" exact>将軍 Shōgun Pool</NavLink>  
-		   </div>
-*/}		   
-   		   <div className="col-sm">
 			   <NavLink to="/rei" exact>霊 Rei Pool</NavLink>  
-		   </div>
-{/*				   
-   		   <div className="col-sm">
-			   <NavLink to="/ki" exact>気 Ki Pool</NavLink>  
-		   </div>
-*/}	   
-		   <div className="col-sm">
-			   <NavLink to="/vault" exact>金庫 Vault</NavLink>  
 		   </div>
 		   
 		   <div className="col-sm">
@@ -62,11 +42,7 @@ const routing = (
             <Routes>  
                 <Route path="/" element={<Home/>} />
                 <Route path="/farm" element={<Farm/>} />
-                <Route path="/ginko" element={<Ginko/>} />                
-{/*                 <Route path="/shogun" element={<ShogunPool/>} />  */}
                 <Route path="/rei" element={<ReiPool/>} />
-{/*                 <Route path="/ki" element={<KiPool/>} />*/}	
-                <Route path="/vault" element={<Vault/>} />   
                 <Route path="/ryu" element={<Ryu/>} />                    
                 <Route path="/about" element={<About/>} />  
                 <Route path="*" element={<Notfound/>} />  

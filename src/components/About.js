@@ -34,18 +34,6 @@ class About extends Component
           		
           		<p>Contract: &nbsp;&nbsp;0x05C1EC18455dB5edcf1389B8fC215d56B42A15C0</p>
           		<br /><p />
-          		<p className="centered_text">----- 銀行 Ginkō -----</p>
-          		<br />
-				<p>Decentraland is a decentralized virtual reality platform powered by the Ethereum blockchain. Within the Decentraland platform, users can create, experience, and monetize their content and applications. The land is divided into parcels that are permanently owned by community members and purchased with MANA, Decentraland's cryptocurrency token.</p>          		
-          		
-          		<p>You can deposit your MANA tokens to earn MANA rewards that are variable and subject to the dynamics of supply and demand. Your rewards increase with your staking power, which depends on how often you harvest your rewards: the longer the time between harvests, the higher the staking power.</p>
-          		
-          		<p>You can harvest up to one time per day, but the maximum staking power is reached after one month without harvesting, at which point you must harvest to continue earning rewards.</p>
-          		
-          		<p>Deposit fees are used to buy CLAM and deposit it in Pearl Bank. Two-thirds of the USD+ rewards earned on Pearl Bank are used to buy MANA and deposit it in the rewards fund. The remaining third of the rewards are reinvested in Pearl Bank, increasing performance over time.</p>
-          		
-          		<p>Contract: &nbsp;&nbsp;0x052034bA1dA874cc49b5B917C67bBBbC605dCfE5</p>
-          		<br /><p />   
           		<p className="centered_text">----- 霊 Rei Pool -----</p>
           		<br />
           		<p>You can deposit your pGō tokens to earn CRV rewards that are variable and subject to the dynamics of supply and demand. Your rewards increase with your staking power, which depends on how often you harvest your rewards: the longer the time between harvests, the higher the staking power.</p>
@@ -56,16 +44,6 @@ class About extends Component
           		
           		<p>Contract: &nbsp;&nbsp;0x9e69f7cD59585C1f0A9e49BE258202Cd7D34E552</p>
           		<br /><p />              		       		
-          		<p className="centered_text">----- 金庫 Vault -----</p>
-          		<br />
-          		<p>You can deposit your WETH tokens to earn WETH rewards that are variable and subject to the dynamics of supply and demand. Your rewards increase with your staking power, which depends on how often you harvest your rewards: the longer the time between harvests, the higher the staking power.</p>
-          		
-          		<p>You can harvest up to one time per day, but the maximum staking power is reached after one month without harvesting, at which point you must harvest to continue earning rewards.</p>
-          		
-          		<p>Deposit fees are used to buy CLAM and deposit it in Pearl Bank. Two-thirds of the USD+ rewards earned on Pearl Bank are used to buy WETH and deposit it in the rewards fund. The remaining third of the rewards are reinvested in Pearl Bank, increasing performance over time.</p>
-          		
-          		<p>Contract: &nbsp;&nbsp;0xEAD65816Bc4Ea40e811571f27e1C3436Cf7Ce75f</p>
-          		<br /><p />
           		<p className="centered_text">----- 竜 Ryū NFT -----</p>
           		<br />
           		<p>You can earn MANA rewards just by having Ryū NFTs in your wallet. It's possible to mint Ryū NFTs for just 10 cents until the maximum supply of one billion is reached. You can also buy and sell Ryū NFTs on the market. Your rewards increase with your staking power, which depends on how often you harvest your rewards: the longer the time between harvests, the higher the staking power.</p>

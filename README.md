@@ -46,7 +46,15 @@ Contract: 0x636B36e405CAF5799463A9B3694E0597Ee11f439
 
 ## Website
 
-The safest way to use the web client is to install it on your computer. Optionally, you can use my web server (https://go-finance.org)
+The website is hosted on IPFS.
+
+**CID:** QmeAd4Qti3XqESjhussuySwZ37WA2ejvrqjhFSC5wQScZz
+
+**IPNS link:** https://cf-ipfs.com/ipns/go-finance.org
+
+**IPFS link:** https://cf-ipfs.com/ipfs/QmeAd4Qti3XqESjhussuySwZ37WA2ejvrqjhFSC5wQScZz
+
+**IPFS info:** https://en.wikipedia.org/wiki/InterPlanetary_File_System
 
 ## Installing
 

@@ -50,9 +50,9 @@ The website is hosted on IPFS.
 
 **CID:** QmeAd4Qti3XqESjhussuySwZ37WA2ejvrqjhFSC5wQScZz
 
-**IPNS link:** https://cf-ipfs.com/ipns/go-finance.org
+**Web:** https://go-finance.org
 
-**IPFS link:** https://cf-ipfs.com/ipfs/QmeAd4Qti3XqESjhussuySwZ37WA2ejvrqjhFSC5wQScZz
+**IPNS:** https://cf-ipfs.com/ipns/go-finance.org
 
 **IPFS info:** https://en.wikipedia.org/wiki/InterPlanetary_File_System
 

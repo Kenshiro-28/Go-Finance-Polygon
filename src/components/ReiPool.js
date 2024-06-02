@@ -85,7 +85,7 @@ class ReiPool extends Component
       const rewardsFund = await reiPool.methods.getRewardsFund().call()
       this.setState({rewardsFund})
       
-      const fixedRewardsFund = parseFloat(window.web3.utils.fromWei(this.state.rewardsFund)).toFixed(4)
+      const fixedRewardsFund = parseFloat(window.web3.utils.fromWei(this.state.rewardsFund)).toFixed(5)
       this.setState({fixedRewardsFund})
       
       const totalStakingDeposits = await reiPool.methods.getTotalStakingDeposits().call()
@@ -109,8 +109,8 @@ class ReiPool extends Component
             
       this.setState({stakingPower})
       
-      const monthlyRewards = (fixedRewardsFund / fixedTotalStakingDeposits).toFixed(4) 
-      this.setState({monthlyRewards})
+      const apr = ((fixedRewardsFund / fixedTotalStakingDeposits) * 12.0).toFixed(5)
+      this.setState({apr})
       
       const allowance = await this.state.goToken.methods.allowance(this.state.account, reiPoolAddress).call()
       this.setState({allowance})
@@ -185,7 +185,7 @@ class ReiPool extends Component
       harvestCooldownBlocks: '0',
       stakingBlockRange: '0',
       stakingPower: '0',
-      monthlyRewards: '0',
+      apr: '0',
       allowance: '0'
     }
   }
@@ -208,12 +208,12 @@ class ReiPool extends Component
                     <td>{this.state.stakingPower} %</td>
                   </tr>
                   <tr>
-                    <td>Harvest lockup: </td>
+                    <td>Harvest lockup: &nbsp;&nbsp;</td>
                     <td>1 day</td>
                   </tr>
                   <tr>
-                    <td>Monthly rewards: &nbsp;&nbsp;</td>
-                    <td>{this.state.monthlyRewards} CRV (per token)</td>
+                    <td>APR: </td>
+                    <td>{this.state.apr} CRV (per token)</td>
                   </tr>
                   <tr>
                     <td>Rewards fund: </td>

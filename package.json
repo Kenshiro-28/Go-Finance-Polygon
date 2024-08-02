@@ -1,0 +1,41 @@
+{
+  "name": "go-finance-web-polygon",
+  "version": "1.0.0",
+  "description": "Gō Finance Web (Polygon)",
+  "author": "Kenshiro",
+  "homepage": ".",
+  "dependencies": {
+    "bootstrap": "^5.0.1",
+    "react": "^18.0.0",
+    "react-bootstrap": "^2.0.0",
+    "react-dom": "^18.0.0",
+    "react-router-dom": "^6.0.0",
+    "react-scripts": "^5.0.0",
+    "web3": "^1.2.11",
+    "react-app-rewired": "^2.2.1",
+    "crypto-browserify": "^3.12.0",
+    "stream-browserify": "^3.0.0",
+    "assert": "^2.0.0",
+    "stream-http": "^3.2.0",
+    "https-browserify": "^1.0.0",
+    "os-browserify": "^0.3.0",
+    "url": "^0.11.0",
+    "buffer": "^6.0.3",
+    "process": "^0.11.10"
+  },
+  "scripts": {
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build",
+    "test":  "react-app-rewired test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}

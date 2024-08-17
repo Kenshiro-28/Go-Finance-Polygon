@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import Web3 from 'web3'
 import GoToken from '../abis/GoToken.json'
-import GoFarm from '../abis/GoFarm.json'
 import MaticGoLP from '../abis/MaticGoLP.json'
 import MaticDaiLP from '../abis/MaticDaiLP.json'
 import rugdoc from '../pictures/rugdoc.png'
@@ -45,27 +44,6 @@ class Home extends Component
     else 
     {
       window.alert('Gō contract not deployed on your current network.')
-    }
-
-    // Load GoFarm
-    const goFarmData = GoFarm.networks[networkId]
-    let goFarm
-    
-    if(goFarmData && goToken) 
-    {
-      goFarm = new web3.eth.Contract(GoFarm.abi, goFarmData.address)
-      
-      const farmTreasury = await goFarm.methods.getFarmTreasury().call()
-      this.setState({farmTreasury})
-      
-      const rewardsFund = await goFarm.methods.getRewardsFund().call()
-      this.setState({rewardsFund})
-
-      const totalFarmBalance = await goToken.methods.balanceOf(goFarmData.address).call()
-      this.setState({totalFarmBalance})
-      
-      const totalGoStaked = await goFarm.methods.getTotalGoStaked().call()
-      this.setState({totalGoStaked})
     }
     
     // Load MaticDaiLP    
@@ -125,10 +103,6 @@ class Home extends Component
     this.state = 
     {
       totalSupply: '0',
-      farmTreasury: '0',
-      rewardsFund: '0',
-      totalFarmBalance: '0',
-      totalGoStaked: '0',
       maticPriceUSD: '0',
       pGoPriceUSD: '0',
       marketCap: '0'
@@ -154,7 +128,6 @@ class Home extends Component
               		</a>
           		</center>
           		<br /><p />
-          		<br />
 		      </div>
 		    </div>)
 	
@@ -171,38 +144,22 @@ class Home extends Component
                         <table>
                           <tbody>
                             <tr>
-                                <td>Total supply: </td>
+                                <td>Total supply: &nbsp;&nbsp;</td>
                                 <td>{window.web3.utils.fromWei(this.state.totalSupply)} pGō</td>
                             </tr>
                             <tr>
                                 <td>Token price: </td>
-                                <td>{parseFloat(this.state.pGoPriceUSD).toFixed(4)} $</td>
+                                <td>{parseFloat(this.state.pGoPriceUSD).toFixed(2)} $</td>
                             </tr>
                             <tr>
                                 <td>Market Cap: </td>
                                 <td>{parseInt(this.state.marketCap)} $</td>
                             </tr>
-                            <tr>
-                                <td>Treasury: </td>
-                                <td>{parseInt(window.web3.utils.fromWei(this.state.farmTreasury))} pGō</td>
-                            </tr>
-                            <tr>
-                                <td>Rewards fund: &nbsp;&nbsp;</td>
-                                <td>{parseInt(window.web3.utils.fromWei(this.state.rewardsFund))} pGō</td>
-                            </tr>
-                            <tr>
-                                <td>Total staked: </td>
-                                <td>{parseInt(window.web3.utils.fromWei(this.state.totalGoStaked))} pGō</td>
-                            </tr>
-                            <tr>
-                                <td>Farm balance: </td>
-                                <td>{parseInt(window.web3.utils.fromWei(this.state.totalFarmBalance))} pGō</td>
-                            </tr>
                           </tbody>
                         </table>
                     </center>
         		    <br /><p />	
-        		    <br /><p />	
+        		    <br /><p />
       		      </div>
 	            </div>
 	         </div>);     

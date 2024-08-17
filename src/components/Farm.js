@@ -84,8 +84,20 @@ class Farm extends Component
       const rewardsFund = await goFarm.methods.getRewardsFund().call()
       this.setState({rewardsFund})
       
-      const totalGoStaked = await goFarm.methods.getTotalGoStaked().call()
-      this.setState({totalGoStaked})
+      const fixedRewardsFund = parseFloat(window.web3.utils.fromWei(rewardsFund)).toFixed(4)
+      this.setState({fixedRewardsFund})      
+      
+      const farmTreasury = await goFarm.methods.getFarmTreasury().call()
+      this.setState({farmTreasury})
+      
+      const fixedFarmTreasury = parseFloat(window.web3.utils.fromWei(farmTreasury)).toFixed(4)
+      this.setState({fixedFarmTreasury})
+      
+      const totalStakingDeposits = await goFarm.methods.getTotalGoStaked().call()
+      this.setState({totalStakingDeposits})
+      
+      const fixedTotalStakingDeposits = parseFloat(window.web3.utils.fromWei(totalStakingDeposits)).toFixed(4)
+      this.setState({fixedTotalStakingDeposits})
       
       const harvestCooldownBlocks = await goFarm.methods.getHarvestCooldownBlocks().call()
       this.setState({harvestCooldownBlocks})
@@ -100,7 +112,7 @@ class Farm extends Component
             
       this.setState({stakingPower})
       
-      const stakingRatio = rewardsFund / totalGoStaked
+      const stakingRatio = rewardsFund / totalStakingDeposits
       const apr = stakingRatio * 100
       this.setState({apr})
       
@@ -176,7 +188,11 @@ class Farm extends Component
       userReward: '0',
       fixedReward: '0',
       rewardsFund: '0',
-      totalGoStaked: '1', 
+      fixedRewardsFund: '0',
+      farmTreasury: '0',
+      fixedFarmTreasury: '0',
+      totalStakingDeposits: '1',
+      fixedTotalStakingDeposits: '0',        
       harvestCooldownBlocks: '0',
       stakingBlockRange: '0',
       stakingPower: '0',
@@ -207,13 +223,25 @@ class Farm extends Component
                     <td>1 day</td>
                   </tr>
                   <tr>
-                    <td>Deposit fee: </td>
-                    <td>10 %</td>
-                  </tr>
-                  <tr>
                     <td>APR: </td>
                     <td>{parseFloat(this.state.apr).toFixed(2)} %</td>
                   </tr>
+                  <tr>
+                    <td>Treasury: </td>
+                    <td>{this.state.fixedFarmTreasury} pGō</td>
+                  </tr>
+                  <tr>
+                    <td>Rewards fund: &nbsp;&nbsp;</td>
+                    <td>{this.state.fixedRewardsFund} pGō</td>
+                  </tr>
+                  <tr>
+                    <td>Total deposits: </td>
+                    <td>{this.state.fixedTotalStakingDeposits} pGō</td>
+                  </tr>
+                  <tr>
+                    <td>Deposit fee: </td>
+                    <td>10 %</td>
+                  </tr>                  
                 </tbody>
             </table>)
     
@@ -319,7 +347,7 @@ class Farm extends Component
     let returnValue
 
     //Configure user menu
-    if (this.state.totalGoStaked==='0') 
+    if (this.state.totalStakingDeposits==='0') 
     {
         depositSection = startFarmButton
         withdrawSection = disabledWithdrawButton

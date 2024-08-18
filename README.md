@@ -58,7 +58,7 @@ Contract: 0x636B36e405CAF5799463A9B3694E0597Ee11f439
 
 The website is hosted on IPFS.
 
-**CID:** Qmbs9tNnfngiLhxzFWbt4qbv672qtfL6vkPDMACteGdPGp
+**CID:** QmS8P8Lr9QdoLSBJyyLmR1hz898sc6GxeXUu76f1ALwTaW
 
 **Web:** https://go-finance.org
 

@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import Web3 from 'web3'
 import GoToken from '../abis/GoToken.json'
 import KiPoolAbi from '../abis/KiPool.json'
-import logo from '../pictures/logo.png'
+import logo from '../pictures/mitsudomoe.png'
 
 class KiPool extends Component 
 {

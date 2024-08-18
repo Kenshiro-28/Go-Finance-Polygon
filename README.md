@@ -34,6 +34,16 @@ Deposit fees are used to buy DAI and deposit it in the atricrypto3 gauge of Curv
 
 Contract: 0x9e69f7cD59585C1f0A9e49BE258202Cd7D34E552
 
+## Ki Pool
+
+You can deposit your pGō tokens to earn pGō rewards that are variable and subject to the dynamics of supply and demand. Your rewards increase with your staking power, which depends on how often you harvest your rewards: the longer the time between harvests, the higher the staking power.
+
+You can harvest up to one time per day, but the maximum staking power is reached after one year without harvesting, at which point you must harvest to continue earning rewards.
+
+Deposit fees are used to buy ETH and POL, which are then added to the ETH / POL liquidity pool on QuickSwap. Over the course of the year, up to 0.73 % of the investment in this liquidity pool will be allocated to buying pGō for the rewards fund and MANA for donation to the Ryū NFT rewards fund. The ETH / POL liquidity pool continuously earns trading fees from user transactions on QuickSwap. These fees are automatically reinvested into the pool, increasing the total value of the liquidity position over time.
+
+Contract: 0x323bC939e7a490b75BF43F88E318aDcd2e28848e
+
 ## Ryū NFT
 
 You can earn MANA rewards just by having Ryū NFTs in your wallet. It's possible to mint Ryū NFTs for just 10 cents until the maximum supply of one billion is reached. You can also buy and sell Ryū NFTs on the market. Your rewards increase with your staking power, which depends on how often you harvest your rewards: the longer the time between harvests, the higher the staking power.

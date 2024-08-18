@@ -7,6 +7,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import Home from './components/Home';
 import Farm from './components/Farm';
 import ReiPool from './components/ReiPool';
+import KiPool from './components/KiPool';
 import Ryu from './components/Ryu';
 import About from './components/About';
 
@@ -31,6 +32,10 @@ const routing = (
            <div className="col-sm">
                <NavLink to="/rei" exact="true">霊 Rei Pool</NavLink>
 		   </div>
+		   
+           <div className="col-sm">
+               <NavLink to="/ki" exact="true">気 Ki Pool</NavLink>
+		   </div>		   
 
 		   <div className="col-sm">
 			   <NavLink to="/ryu" exact="true">竜 Ryū NFT</NavLink>
@@ -46,6 +51,7 @@ const routing = (
                 <Route path="/" element={<Home/>} />
                 <Route path="/farm" element={<Farm/>} />
                 <Route path="/rei" element={<ReiPool/>} />
+                <Route path="/ki" element={<KiPool/>} />                
                 <Route path="/ryu" element={<Ryu/>} />
                 <Route path="/about" element={<About/>} />
                 <Route path="*" element={<Notfound/>} />
